@@ -16,8 +16,10 @@
 
 | 내용                                              | 경로                                     |
 | ------------------------------------------------- | ---------------------------------------- |
-| 커밋 / 브랜치 / PR 규칙                           | `docs/conventions/git.md`                |
+| 커밋 메시지 규칙 (커밋 시 이 문서를 따를 것)      | `docs/conventions/commit.md`             |
+| 브랜치 / PR 규칙                                  | `docs/conventions/git.md`                |
 | 파일명, 컴포넌트, 타입, 변수, 함수 등 코딩 컨벤션 | `docs/conventions/conventions.md`        |
+| 포맷팅/Lint, SVGR 아이콘, Barrel Export 등 도구   | `docs/conventions/tooling.md`            |
 | 프로젝트 폴더 구조                                | `docs/architecture/project-structure.md` |
 | AI 관련 파일 정리                                 | `docs/agents/`                           |
 

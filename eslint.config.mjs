@@ -69,6 +69,9 @@ const eslintConfig = defineConfig([
     'out/**',
     'build/**',
     'next-env.d.ts',
+    // scripts/generate-icon-exports.ts로 자동 생성되는 아이콘 컴포넌트
+    'src/shared/assets/components/**',
+    'src/shared/assets/index.tsx',
   ]),
 ]);
 

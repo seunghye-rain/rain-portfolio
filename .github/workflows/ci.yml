@@ -48,16 +48,33 @@ jobs:
         run: pnpm build
         continue-on-error: true
 
+      - name: Verify generated files are up to date
+        id: generated
+        run: |
+          pnpm build:icons
+          pnpm barrels
+
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "svgr/barrel 산출물이 최신 상태가 아닙니다. 아래 파일이 달라졌습니다:"
+            git status --porcelain
+            echo
+            git diff
+            exit 1
+          fi
+        continue-on-error: true
+
       - name: Evaluate lint and build status
         id: status
         run: |
           format_result="${{ steps.format.outcome }}"
           lint_result="${{ steps.lint.outcome }}"
           build_result="${{ steps.build.outcome }}"
+          generated_result="${{ steps.generated.outcome }}"
 
           format_message=""
           lint_message=""
           build_message=""
+          generated_message=""
           overall_result="success"
 
           if [ "$format_result" == "success" ]; then
@@ -81,10 +98,17 @@ jobs:
             overall_result="failed"
           fi
 
-          if [ "$overall_result" == "success" ]; then
-            message="모든 검사 통과 💫\n- $format_message\n- $lint_message\n- $build_message"
+          if [ "$generated_result" == "success" ]; then
+            generated_message="생성 파일 최신 상태 ✅"
           else
-            message="일부 검사 실패 ⚠️\n- $format_message\n- $lint_message\n- $build_message"
+            generated_message="생성 파일 불일치 ❌ (pnpm build:icons / pnpm barrels 재실행 후 커밋 필요)"
+            overall_result="failed"
+          fi
+
+          if [ "$overall_result" == "success" ]; then
+            message="모든 검사 통과 💫\n- $format_message\n- $lint_message\n- $build_message\n- $generated_message"
+          else
+            message="일부 검사 실패 ⚠️\n- $format_message\n- $lint_message\n- $build_message\n- $generated_message"
           fi
 
           echo "result=$overall_result" >> $GITHUB_OUTPUT
