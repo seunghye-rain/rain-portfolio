@@ -1,0 +1,26 @@
+@theme {
+  --color-black-1: #ffffff;
+  --color-black-2: #fcfcfc;
+  --color-black-3: #f5f5f5;
+  --color-black-4: #eaeaea;
+  --color-black-5: #e3e3e3;
+  --color-black-6: #bfbfbf;
+  --color-black-7: #8c8c8c;
+  --color-black-8: #595959;
+  --color-black-9: #313131;
+  --color-black-10: #000000;
+
+  --color-yellow-1: #ffcd19;
+  --color-yellow-2: #ffda2c;
+  --color-yellow-3: #ffec85;
+  --color-yellow-4: #ffefb4;
+  --color-yellow-5: #fffde1;
+
+  --gradient-bg: linear-gradient(180deg, #fff 14.3%, #fffde1 110.24%);
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: var(--gradient-bg);
+  }
+}
