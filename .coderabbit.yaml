@@ -92,9 +92,9 @@ reviews:
     - path: 'scripts/**'
       instructions: |
         자동화 스크립트 리뷰 시:
-        - generate-icon-exports.ts: shared/assets/svg -> shared/assets/components 경로가 실제 폴더 구조와 맞는지, fill 치환/viewBox 보존 로직이 깨지지 않았는지
-        - generate-barrel-exports.ts: 대상 폴더가 shared/components/ui, shared/components/layout 두 곳으로 한정되어 있는지 (docs/conventions/conventions.md의 Barrel Export 절 기준)
-        - 두 스크립트 모두 산출물에 "자동 생성" 헤더를 남기는지, 실행 결과가 shared/assets/components/**, shared/components/{ui,layout}/index.ts 등 자동 생성 대상과 일치하는지
+        - generate-icon-exports.ts: src/shared/assets/svg -> src/shared/assets/components 경로가 실제 폴더 구조와 맞는지, fill 치환/viewBox 보존 로직이 깨지지 않았는지
+        - generate-barrel-exports.ts: 대상 폴더가 src/shared/components/ui, src/shared/components/layout 두 곳으로 한정되어 있는지 (docs/conventions/tooling.md의 Barrel Export 절 기준)
+        - 두 스크립트 모두 산출물에 "자동 생성" 헤더를 남기는지, 실행 결과가 src/shared/assets/components/**, src/shared/components/{ui,layout}/index.ts 등 자동 생성 대상과 일치하는지
 
     - path: 'eslint.config.*'
       instructions: |
