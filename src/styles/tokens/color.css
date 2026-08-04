@@ -16,7 +16,7 @@
   --color-yellow-4: #ffefb4;
   --color-yellow-5: #fffde1;
 
-  --gradient-bg: background: linear-gradient(180deg, #fff 14.3%, #fffde1 110.24%);
+  --gradient-bg: linear-gradient(180deg, #fff 14.3%, #fffde1 110.24%);
 }
 
 @layer utilities {
