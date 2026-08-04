@@ -64,3 +64,12 @@ init/setup-project
 
 기타 공유할 사항
 ```
+
+### 자동화
+
+PR을 열면 GitHub Actions가 아래를 자동으로 처리합니다 (`.github/workflows/`).
+
+- **PR Triage**: PR 작성자를 assignee로 지정하고, PR 제목의 접두사(`[Feat]`, `[Fix]` 등)를 보고 미리 만들어둔 같은 의미의 라벨을 붙입니다. 제목을 수정하면 라벨도 다시 계산됩니다.
+- **CI**: `develop`, `main`으로의 PR에서 `pnpm lint`, `pnpm build`를 실행합니다.
+
+배포는 GitHub Actions가 아니라 Vercel의 Git 연동이 담당하며, `main` 브랜치 push만 Production으로 배포되도록 Vercel 프로젝트 설정(Production Branch)이 되어 있어야 합니다.
