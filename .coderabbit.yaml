@@ -32,11 +32,8 @@ reviews:
   # Path Filters
   # =====================
   path_filters:
-    # 허용 경로
-    - 'app/**'
-    - 'shared/**'
-    - 'lib/**'
-    - 'styles/**'
+    # 허용 경로 (app, shared, lib, styles는 모두 src/ 하위)
+    - 'src/**'
     - 'public/**'
     - 'docs/**'
     - '.github/**'
@@ -51,6 +48,7 @@ reviews:
     - '.prettierignore'
     - 'lint-staged.config.*'
     - '.husky/**'
+    - 'scripts/**'
     - 'README.md'
     - 'AGENTS.md'
 
@@ -61,6 +59,11 @@ reviews:
     - '!build/**'
     - '!.pnpm-store/**'
     - '!.husky/_/**'
+    # svgr/barrel 스크립트로 자동 생성되는 파일 (직접 수정 금지 대상)
+    - '!src/shared/assets/components/**'
+    - '!src/shared/assets/index.tsx'
+    - '!src/shared/components/ui/index.ts'
+    - '!src/shared/components/layout/index.ts'
     - '!coverage/**'
     - '!**/*.snap'
     - '!**/*.png'
@@ -85,6 +88,13 @@ reviews:
         - YAML 문법 및 스키마 호환성 확인
         - path_filters / path_instructions 중복 여부 점검
         - docs/conventions 문서와 설정 내용이 어긋나지 않는지 검토
+
+    - path: 'scripts/**'
+      instructions: |
+        자동화 스크립트 리뷰 시:
+        - generate-icon-exports.ts: shared/assets/svg -> shared/assets/components 경로가 실제 폴더 구조와 맞는지, fill 치환/viewBox 보존 로직이 깨지지 않았는지
+        - generate-barrel-exports.ts: 대상 폴더가 shared/components/ui, shared/components/layout 두 곳으로 한정되어 있는지 (docs/conventions/conventions.md의 Barrel Export 절 기준)
+        - 두 스크립트 모두 산출물에 "자동 생성" 헤더를 남기는지, 실행 결과가 shared/assets/components/**, shared/components/{ui,layout}/index.ts 등 자동 생성 대상과 일치하는지
 
     - path: 'eslint.config.*'
       instructions: |
@@ -111,7 +121,7 @@ reviews:
         - pre-commit이 lint-staged만 실행하고, 무거운 typecheck/build를 포함하지 않는지 (해당 검증은 CI에서 담당)
         - CI(.github/workflows/ci.yml)에서 HUSKY=0으로 hook을 건너뛰도록 되어 있는지
 
-    - path: 'app/**'
+    - path: 'src/app/**'
       instructions: |
         Next.js App Router 리뷰 시 (docs/architecture/project-structure.md 기준):
         - 페이지 폴더((home), resume, marketing, develop, article) 하위에만 쓰이는 코드는 해당 폴더 안(mocks/, components/)에 두고, 다른 페이지에서도 필요해질 때만 shared로 옮겼는지 확인
@@ -128,46 +138,46 @@ reviews:
         - 버튼/헤더 등 공용 컴포넌트는 `children`을 적극 활용하는지
         - 파일에서 단일 요소만 내보낼 때 default export, 2개 이상이면 각각 named export를 쓰는지
 
-    - path: 'shared/components/ui/**'
+    - path: 'src/shared/components/ui/**'
       instructions: |
         공용 UI 컴포넌트 리뷰 시:
         - 여러 페이지에서 재사용 가능한 수준으로 일반화되어 있는지 (특정 페이지 로직에 결합되지 않았는지)
-        - className 조합 시 `lib/utils`의 `cn` 유틸 사용이 일관적인지
+        - className 조합 시 `src/lib/utils`의 `cn` 유틸 사용이 일관적인지
         - children/props 확장을 통한 조합 가능성 고려 여부
 
-    - path: 'shared/components/layout/**'
+    - path: 'src/shared/components/layout/**'
       instructions: |
         레이아웃 컴포넌트(헤더, 푸터 등) 리뷰 시:
         - 특정 페이지 전용 콘텐츠가 섞여 들어가지 않았는지
         - 전역 스타일 토큰(styles/tokens)을 하드코딩 값 대신 사용하는지
 
-    - path: 'shared/hooks/**'
+    - path: 'src/shared/hooks/**'
       instructions: |
         커스텀 훅 리뷰 시:
         - `use` 접두사 및 역할이 이름에서 명확히 드러나는지
         - 의존성 배열(exhaustive-deps) 누락 여부
         - 브라우저 전용 API 사용 시 SSR 안전성 확인
 
-    - path: 'shared/utils/**'
+    - path: 'src/shared/utils/**'
       instructions: |
         공통 유틸 함수 리뷰 시 (docs/conventions/conventions.md 기준):
         - 함수명이 역할을 드러내는지 (`get`, `create`, `check` 등), boolean 반환 함수는 `has+명사`인지
         - 여러 페이지에서 중복되는 로직을 공통화한 것인지, 불필요한 조기 추상화는 아닌지
         - early return을 적극 활용했는지
 
-    - path: 'shared/constants/**'
+    - path: 'src/shared/constants/**'
       instructions: |
         공통 상수 리뷰 시:
         - 대문자 스네이크 케이스로 작성했는지 (`API_KEY`)
         - 특정 페이지에서만 쓰는 상수가 잘못 올라온 것은 아닌지
 
-    - path: 'lib/**'
+    - path: 'src/lib/**'
       instructions: |
         외부 라이브러리 연동 코드 리뷰 시:
         - tailwind 클래스 병합(`cn`) 등 유틸이 프로젝트 전역에서 일관되게 쓰이는지
         - 서버/클라이언트 전용 의존성이 잘못 섞이지 않았는지
 
-    - path: 'styles/**'
+    - path: 'src/styles/**'
       instructions: |
         전역 스타일 리뷰 시:
         - 색상/타이포그래피는 `tokens/color.css`, `tokens/typography.css`의 토큰을 사용하는지
@@ -281,5 +291,7 @@ knowledge_base:
     filePatterns:
       - 'AGENTS.md'
       - 'docs/conventions/conventions.md'
+      - 'docs/conventions/commit.md'
       - 'docs/conventions/git.md'
+      - 'docs/conventions/tooling.md'
       - 'docs/architecture/project-structure.md'
