@@ -295,3 +295,6 @@ knowledge_base:
       - 'docs/conventions/git.md'
       - 'docs/conventions/tooling.md'
       - 'docs/architecture/project-structure.md'
+      - 'docs/design/design.md'
+      - 'docs/design/color-token.md'
+      - 'docs/design/typo-token.md'
