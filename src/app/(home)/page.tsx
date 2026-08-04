@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className='bg-black-2 text-black-10 min-h-screen px-[8rem] py-[8rem]'>
+    <main className='text-black-10 min-h-screen px-[8rem] py-[8rem]'>
       <div className='mx-auto flex max-w-[120rem] flex-col gap-[8rem]'>
         <section className='flex flex-col gap-[2.4rem]'>
           <div>
