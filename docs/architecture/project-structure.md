@@ -95,7 +95,7 @@ Next.js App Router를 그대로 사용합니다. 현재 페이지 단위는 `(ho
 
 프로젝트 문서화를 위한 공간입니다.
 
-- `conventions/` : 이 프로젝트에서 지켜야 할 컨벤션 문서 (`git.md`, `conventions.md`)
+- `conventions/` : 이 프로젝트에서 지켜야 할 컨벤션 문서 (`conventions.md`, `commit.md`, `git.md`, `tooling.md`)
 - `agents/` : AI 관련 파일 정리
 - `architecture/` : 이 문서를 포함한 프로젝트 구조 문서
 
