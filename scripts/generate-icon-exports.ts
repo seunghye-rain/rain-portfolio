@@ -23,7 +23,7 @@ function toComponentName(filename: string): string {
 }
 
 function normalizeFillAttributes(svg: string): string {
-  return svg.replace(/fill="(?!none\b)[^"]*"/gi, 'fill="currentColor"');
+  return svg.replace(/fill=(["'])(?!none\b)[^"']*\1/gi, 'fill="currentColor"');
 }
 
 function extractViewBox(svg: string): string | null {
@@ -93,7 +93,13 @@ async function generateIndexFile(icons: GeneratedIcon[]) {
     )
     .join('\n');
 
-  const content = `${HEADER_COMMENT}\n${imports}\n\n${iconType}\n\n${exportLines}\n`;
+  const rawContent = `${HEADER_COMMENT}\n${imports}\n\n${iconType}\n\n${exportLines}\n`;
+
+  const projectPrettierConfig = (await prettier.resolveConfig(INDEX_FILE)) ?? {};
+  const content = await prettier.format(rawContent, {
+    ...projectPrettierConfig,
+    parser: 'babel-ts',
+  });
   await writeFile(INDEX_FILE, content, 'utf-8');
 }
 

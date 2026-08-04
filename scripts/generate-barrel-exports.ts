@@ -1,4 +1,4 @@
-import { existsSync, readdirSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 const ROOT_DIR = process.cwd();
@@ -30,13 +30,19 @@ function generateBarrelIndex(targetDir: string) {
     exportLines.push(`export * from './${entry.name}/index';`);
   }
 
+  const indexPath = join(targetDir, INDEX_FILENAME);
+
   if (exportLines.length === 0) {
-    console.log(`ℹ️ ${targetDir}에 export할 하위 모듈이 없습니다.`);
+    if (existsSync(indexPath)) {
+      unlinkSync(indexPath);
+      console.log(`🗑️ ${indexPath} 삭제 완료 (export할 하위 모듈 없음)`);
+    } else {
+      console.log(`ℹ️ ${targetDir}에 export할 하위 모듈이 없습니다.`);
+    }
     return;
   }
 
   const content = `${HEADER_COMMENT}\n${exportLines.sort().join('\n')}\n`;
-  const indexPath = join(targetDir, INDEX_FILENAME);
   const prev = existsSync(indexPath) ? readFileSync(indexPath, 'utf-8') : '';
 
   if (prev === content) {
