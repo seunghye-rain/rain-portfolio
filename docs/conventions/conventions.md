@@ -6,8 +6,8 @@
 
 - 폴더명은 케밥 케이스로 작성한다. (`page-header`)
 - 파일명은 종류에 따라 다르게 작성한다.
-    - 상수, 타입 등: 카멜 케이스 (`userType.ts`)
-    - 컴포넌트: 파스칼 케이스 (`PageHeader.tsx`)
+  - 상수, 타입 등: 카멜 케이스 (`userType.ts`)
+  - 컴포넌트: 파스칼 케이스 (`PageHeader.tsx`)
 
 ## 네이밍
 
@@ -58,3 +58,17 @@
 
 - 파일에서 단일 요소만 내보낼 때는 `default export`를 사용한다.
 - 2개 이상 내보낼 때는 각각 `named export`로 선언한다.
+
+## Import
+
+- 다른 폴더의 코드를 가져올 때 2단계(`../../`) 이상 상위로 올라가야 한다면 상대 경로 대신 절대 경로(`@/`)를 사용한다. (`@/shared/utils/cn`)
+- 같은 페이지/기능 폴더 안에서 한 단계(`../`) 이내로 옮겨가는 경우는 상대 경로를 그대로 써도 된다.
+
+## 포맷팅 / Lint 자동화
+
+- 포맷팅은 Prettier(`.prettierrc`)가, 코드 품질과 import 정렬은 ESLint(`eslint.config.mjs`)가 담당한다. Tailwind 클래스 순서는 `prettier-plugin-tailwindcss`가 자동으로 정렬한다.
+- `git commit` 시 Husky의 `pre-commit` 훅이 `lint-staged`를 실행해, staged 파일에 한해 Prettier → ESLint 순으로 자동 적용한다. ESLint가 자동 수정할 수 없는 오류가 남으면 커밋이 중단된다.
+- typecheck/build까지는 커밋마다 돌리기엔 무거워서 CI(`.github/workflows/ci.yml`)에서 검증한다.
+- 아래 스크립트로 수동 실행도 가능하다.
+  - `pnpm lint` / `pnpm lint:fix`
+  - `pnpm format` / `pnpm format:check`
