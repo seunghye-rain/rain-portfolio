@@ -47,6 +47,10 @@ reviews:
     - 'package.json'
     - 'pnpm-workspace.yaml'
     - '.coderabbit.yaml'
+    - '.prettierrc'
+    - '.prettierignore'
+    - 'lint-staged.config.*'
+    - '.husky/**'
     - 'README.md'
     - 'AGENTS.md'
 
@@ -56,6 +60,7 @@ reviews:
     - '!out/**'
     - '!build/**'
     - '!.pnpm-store/**'
+    - '!.husky/_/**'
     - '!coverage/**'
     - '!**/*.snap'
     - '!**/*.png'
@@ -80,6 +85,31 @@ reviews:
         - YAML 문법 및 스키마 호환성 확인
         - path_filters / path_instructions 중복 여부 점검
         - docs/conventions 문서와 설정 내용이 어긋나지 않는지 검토
+
+    - path: 'eslint.config.*'
+      instructions: |
+        ESLint 설정 리뷰 시:
+        - docs/conventions/conventions.md에 정의된 규칙(var 금지, button type 명시, map key 등)과 실제 rules가 어긋나지 않는지
+        - eslint-config-prettier가 포맷 관련 규칙과 충돌하지 않도록 마지막에 위치하는지
+        - no-restricted-imports의 절대 경로(@/) 유도 패턴이 tsconfig의 path alias와 일치하는지
+
+    - path: '.prettierrc'
+      instructions: |
+        Prettier 설정 리뷰 시:
+        - prettier-plugin-tailwindcss가 유지되어 Tailwind 클래스 정렬이 계속 적용되는지
+        - eslint.config.mjs의 eslint-config-prettier와 충돌하는 규칙을 새로 추가하지 않았는지
+
+    - path: 'lint-staged.config.*'
+      instructions: |
+        lint-staged 설정 리뷰 시:
+        - .husky/pre-commit에서 실행하는 lint-staged와 대상 glob이 실제 프로젝트 파일 확장자와 맞는지
+        - prettier --write 이후 eslint --fix 순서(포맷 먼저, 린트 나중)가 유지되는지
+
+    - path: '.husky/**'
+      instructions: |
+        Git hook 리뷰 시:
+        - pre-commit이 lint-staged만 실행하고, 무거운 typecheck/build를 포함하지 않는지 (해당 검증은 CI에서 담당)
+        - CI(.github/workflows/ci.yml)에서 HUSKY=0으로 hook을 건너뛰도록 되어 있는지
 
     - path: 'app/**'
       instructions: |
