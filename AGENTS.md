@@ -21,6 +21,7 @@
 | 파일명, 컴포넌트, 타입, 변수, 함수 등 코딩 컨벤션 | `docs/conventions/conventions.md`        |
 | 포맷팅/Lint, SVGR 아이콘, Barrel Export 등 도구   | `docs/conventions/tooling.md`            |
 | 프로젝트 폴더 구조                                | `docs/architecture/project-structure.md` |
+| 디자인 원칙, 컬러/타이포그래피 토큰               | `docs/design/`                           |
 | AI 관련 파일 정리                                 | `docs/agents/`                           |
 
 문서와 실제 코드가 다르면 코드를 기준으로 삼고, 구조나 규칙이 바뀌었다면 관련 문서도 함께 갱신합니다.

@@ -38,7 +38,8 @@ rain-portfolio/
 ├── docs/                   # 프로젝트 문서
 │   ├── conventions/
 │   ├── agents/
-│   └── architecture/
+│   ├── architecture/
+│   └── design/
 │
 └── public/
     └── imgs/                # 로고 등 공용 이미지
@@ -98,6 +99,7 @@ Next.js App Router를 그대로 사용합니다. 현재 페이지 단위는 `(ho
 - `conventions/` : 이 프로젝트에서 지켜야 할 컨벤션 문서 (`conventions.md`, `commit.md`, `git.md`, `tooling.md`)
 - `agents/` : AI 관련 파일 정리
 - `architecture/` : 이 문서를 포함한 프로젝트 구조 문서
+- `design/` : 디자인 공통 규칙과 컬러/타이포그래피 토큰 문서 (`design.md`, `color-token.md`, `typo-token.md`)
 
 ## public/imgs
 
