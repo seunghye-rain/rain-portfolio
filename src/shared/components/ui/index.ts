@@ -1,4 +1,5 @@
 // ⚠️ 자동 생성된 파일입니다. 직접 수정하지 마세요.
+export * from './cta-button/index';
 export * from './footer/index';
 export * from './header/index';
 export * from './section-title/index';
