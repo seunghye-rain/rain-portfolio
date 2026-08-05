@@ -6,6 +6,7 @@ import type { IconProps } from '@/shared/assets';
 type IconButtonProps = {
   href: string;
   icon: ComponentType<IconProps>;
+  ariaLabel: string;
   width?: number;
   height?: number;
   iconSize?: number;
@@ -15,6 +16,7 @@ type IconButtonProps = {
 export const IconButton = ({
   href,
   icon: Icon,
+  ariaLabel,
   width = 6,
   height = 6,
   iconSize = 4.5,
@@ -23,6 +25,7 @@ export const IconButton = ({
   return (
     <a
       href={href}
+      aria-label={ariaLabel}
       style={{ width: `${width}rem`, height: `${height}rem` }}
       className={cn(
         'bg-black-1 flex shrink-0 items-center justify-center overflow-hidden rounded-full',
