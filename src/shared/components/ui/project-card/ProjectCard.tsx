@@ -35,7 +35,7 @@ export const ProjectCard = ({
         <Image src={imageSrc} alt={imageAlt} fill className='object-cover object-center' />
       </div>
       <div className='flex w-full flex-col items-start gap-[1rem] px-[1.6rem]'>
-        <p className='font-18-sb text-black-10 whitespace-nowrap'>{title}</p>
+        <p className='font-18-sb text-black-10 line-clamp-2'>{title}</p>
         <p className='font-16-rg text-black-7'>{description}</p>
       </div>
     </a>
