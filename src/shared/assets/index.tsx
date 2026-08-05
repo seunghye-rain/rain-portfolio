@@ -13,6 +13,6 @@ export { default as IconLetter } from './components/IconLetter';
 export { default as IconLinkedin } from './components/IconLinkedin';
 export { default as IconLogo } from './components/IconLogo';
 export { default as IconPhone } from './components/IconPhone';
-export { default as IconSlideup } from './components/IconSlideup';
 export { default as IconRain } from './components/IconRain';
+export { default as IconSlideup } from './components/IconSlideup';
 export { default as IconSmartphone } from './components/IconSmartphone';
