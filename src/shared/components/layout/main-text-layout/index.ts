@@ -1,0 +1,1 @@
+export { MainTextLayout } from './MainTextLayout';
