@@ -86,6 +86,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TODO: 제거하기 */}
         <section className='flex flex-col gap-[2.4rem]'>
           <h2 className='title-26-eb'>Tabs</h2>
           <Tabs>
