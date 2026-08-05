@@ -3,7 +3,7 @@ import '@/styles/globals.css';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 
-import { Header } from '@/shared/components/ui';
+import { Footer, Header } from '@/shared/components/ui';
 
 const pretendard = localFont({
   src: '../../public/fonts/PretendardVariable.woff2',
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Header />
         <main className='px-[8rem] py-[8rem]'>{children}</main>
+        <Footer />
       </body>
     </html>
   );

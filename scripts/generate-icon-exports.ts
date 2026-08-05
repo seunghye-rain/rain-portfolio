@@ -23,7 +23,8 @@ function toComponentName(filename: string): string {
 }
 
 function normalizeFillAttributes(svg: string): string {
-  return svg.replace(/fill=(["'])(?!none\b)[^"']*\1/gi, 'fill="currentColor"');
+  // fill="none"과 fill="url(#...)"(그라디언트/패턴/이미지 참조)는 색상이 아니라 구조적 참조이므로 건드리지 않는다.
+  return svg.replace(/fill=(["'])(?!none\b|url\()[^"']*\1/gi, 'fill="currentColor"');
 }
 
 function extractViewBox(svg: string): string | null {
@@ -53,7 +54,7 @@ async function generateIconComponent(file: string) {
       prettier: false,
       plugins: ['@svgr/plugin-svgo', '@svgr/plugin-jsx'],
     },
-    { componentName },
+    { componentName, filePath: svgPath },
   );
 
   // viewBox가 없으면 추가
