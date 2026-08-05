@@ -1,7 +1,5 @@
 import Link from 'next/link';
 
-import { Tabs } from '@/shared/components/ui';
-
 export default function Home() {
   return (
     <main className='text-black-10 min-h-screen px-[8rem] py-[8rem]'>
@@ -84,24 +82,6 @@ export default function Home() {
             <p className='caption-14-bd'>caption-14-bd</p>
             <p className='caption-14-md'>caption-14-md</p>
           </div>
-        </section>
-
-        {/* TODO: 제거하기 */}
-        <section className='flex flex-col gap-[2.4rem]'>
-          <h2 className='title-26-eb'>Tabs</h2>
-          <Tabs>
-            <Tabs.List>
-              <Tabs.Item value='all' activeValue='all' href='#'>
-                ALL
-              </Tabs.Item>
-              <Tabs.Item value='web' activeValue='all' href='#'>
-                WEB
-              </Tabs.Item>
-              <Tabs.Item value='app' activeValue='all' href='#'>
-                APP
-              </Tabs.Item>
-            </Tabs.List>
-          </Tabs>
         </section>
       </div>
     </main>
