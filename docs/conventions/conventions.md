@@ -56,8 +56,8 @@
 
 ## Export
 
-- 파일에서 단일 요소만 내보낼 때는 `default export`를 사용한다.
-- 2개 이상 내보낼 때는 각각 `named export`로 선언한다.
+- `page.tsx`, `layout.tsx`, `loading.tsx` 등 Next.js가 default export를 요구하는 특수 파일을 제외하고는, 파일에 내보낼 요소가 하나뿐이어도 `named export`를 사용한다. (`export const Header = () => {}`)
+- barrel(`export * from './x'`)로 재수출하는 `shared/components/ui`, `shared/components/layout` 등에서는 named export를 써야 하위 `index.ts`가 `default as` 없이 그대로 재수출할 수 있고, import 시 이름도 항상 고정된다.
 
 ## Import
 
