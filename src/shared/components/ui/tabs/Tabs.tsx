@@ -3,7 +3,7 @@ import type { HTMLAttributes, ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
 
-type TabProps = HTMLAttributes<HTMLDivElement> & {
+type TabsProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
 };
 
@@ -19,7 +19,7 @@ type TabItemProps = {
   className?: string;
 };
 
-const Tab = ({ className, children, ...props }: TabProps) => {
+const Tabs = ({ className, children, ...props }: TabsProps) => {
   return (
     <div className={cn('w-full', className)} {...props}>
       {children}
@@ -59,4 +59,6 @@ const TabItem = ({ value, activeValue, href, children, className }: TabItemProps
   );
 };
 
-export const Tabs = Object.assign(Tab, { List: TabsList, Item: TabItem });
+const CompoundTabs = Object.assign(Tabs, { List: TabsList, Item: TabItem });
+
+export { CompoundTabs as Tabs };
