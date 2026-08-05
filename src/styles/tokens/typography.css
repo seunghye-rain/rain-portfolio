@@ -118,6 +118,13 @@
     letter-spacing: -0.2px;
   }
 
+  .font-18-rg {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.2px;
+  }
+
   .font-16-bd {
     font-size: 1.6rem;
     font-weight: 700;
