@@ -2,6 +2,8 @@
 
 이 문서는 이 프로젝트에서 코드 품질/포맷을 자동으로 맞춰주는 도구와, 반복 작업을 대신해주는 자동화 스크립트를 정리합니다. 코딩 스타일 자체는 [`conventions.md`](./conventions.md)를 참고하세요.
 
+`pnpm build`는 `next build` 전에 `pnpm build:icons` → `pnpm barrels` → `pnpm lint:fix`를 순서대로 실행한다. 아이콘/배럴 산출물을 수동으로 갱신하지 않고 빌드만 돌려도 항상 최신 상태로 맞춰진다.
+
 ## 포맷팅 / Lint 자동화
 
 - 포맷팅은 Prettier(`.prettierrc`)가, 코드 품질과 import 정렬은 ESLint(`eslint.config.mjs`)가 담당한다. Tailwind 클래스 순서는 `prettier-plugin-tailwindcss`가 자동으로 정렬한다.
