@@ -5,7 +5,7 @@
   "packageManager": "pnpm@10.30.3",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "pnpm build:icons && pnpm barrels && pnpm lint:fix && next build",
     "start": "next start",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
