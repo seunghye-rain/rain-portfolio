@@ -7,14 +7,14 @@ export const Footer = () => {
         <p className='font-16-rg text-black-6'>Copyright © 2026 양승혜</p>
       </div>
       <div className='flex flex-col items-start gap-[1rem] px-[1.8rem]'>
-        <div className='flex items-center gap-[0.8rem]'>
+        <a href='mailto:seunghye0307@naver.com' className='flex items-center gap-[0.8rem]'>
           <IconLetter className='size-[2.4rem]' />
           <span className='font-18-md text-black-8'>seunghye0307@naver.com</span>
-        </div>
-        <div className='flex items-center gap-[0.8rem]'>
+        </a>
+        <a href='tel:010-7137-2307' className='flex items-center gap-[0.8rem]'>
           <IconPhone className='size-[2.4rem]' />
           <span className='font-18-md text-black-8'>010-7137-2307</span>
-        </div>
+        </a>
       </div>
     </footer>
   );
