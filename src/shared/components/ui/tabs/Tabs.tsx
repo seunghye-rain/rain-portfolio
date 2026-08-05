@@ -21,7 +21,7 @@ type TabItemProps = {
 
 const Tab = ({ className, children, ...props }: TabProps) => {
   return (
-    <div className={cn('bg-black-1 w-full', className)} {...props}>
+    <div className={cn('w-full', className)} {...props}>
       {children}
     </div>
   );
@@ -49,7 +49,7 @@ const TabItem = ({ value, activeValue, href, children, className }: TabItemProps
       href={href}
       scroll={false}
       className={cn(
-        'title-26-sb flex items-center justify-center border-b-[0.2rem] px-[0.4rem] pb-[1rem]',
+        'title-26-md flex items-center justify-center border-b-[0.2rem] px-[0.4rem] pb-[1rem] transition-colors duration-200',
         isActive ? 'border-yellow-1 text-yellow-1' : 'text-black-7 border-transparent',
         className,
       )}
