@@ -4,3 +4,5 @@
 import type { SVGProps } from 'react';
 
 export type IconProps = SVGProps<SVGSVGElement>;
+
+export { default as IconLogo } from './components/IconLogo';
