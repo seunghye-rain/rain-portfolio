@@ -5,6 +5,7 @@
     width: 100%;
   }
   body {
+    min-width: 102.5rem;
     background: var(--gradient-bg);
   }
   html {
