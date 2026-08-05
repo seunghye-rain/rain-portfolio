@@ -1,0 +1,1 @@
+export { FeatureTextLayout } from './FeatureTextLayout';
