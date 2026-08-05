@@ -3,5 +3,6 @@ export * from './cta-button/index';
 export * from './footer/index';
 export * from './header/index';
 export * from './icon-button/index';
+export * from './project-card/index';
 export * from './section-title/index';
 export * from './tabs/index';
