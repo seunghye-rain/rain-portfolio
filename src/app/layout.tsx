@@ -12,6 +12,9 @@ const pretendard = localFont({
 export const metadata: Metadata = {
   title: '양승혜 포트폴리오',
   description: 'Rain Portfolio',
+  icons: {
+    icon: '/imgs/favicon.png',
+  },
   viewport: {
     width: 'device-width',
     initialScale: 1,
