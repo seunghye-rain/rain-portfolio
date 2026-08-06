@@ -80,29 +80,15 @@ export default function Home() {
       <section aria-labelledby='home-advantages-title'>
         <ScrollReveal className='flex flex-col items-center gap-[4rem]'>
           <SectionTitle id='home-advantages-title' title='Advantages' showIcon={false} />
-          <div className='flex gap-[8rem]'>
-            <MainTextLayout
-              className='w-[50rem]'
-              title={ADVANTAGES[0].title}
-              content={ADVANTAGES[0].paragraphs}
-            />
-            <MainTextLayout
-              className='w-[50rem]'
-              title={ADVANTAGES[1].title}
-              content={ADVANTAGES[1].paragraphs}
-            />
-          </div>
-          <div className='flex gap-[8rem]'>
-            <MainTextLayout
-              className='w-[50rem]'
-              title={ADVANTAGES[2].title}
-              content={ADVANTAGES[2].paragraphs}
-            />
-            <MainTextLayout
-              className='w-[50rem]'
-              title={ADVANTAGES[3].title}
-              content={ADVANTAGES[3].paragraphs}
-            />
+          <div className='grid grid-cols-2 gap-x-[8rem] gap-y-[4rem]'>
+            {ADVANTAGES.map((advantage) => (
+              <MainTextLayout
+                key={advantage.title}
+                className='w-[50rem]'
+                title={advantage.title}
+                content={advantage.paragraphs}
+              />
+            ))}
           </div>
         </ScrollReveal>
       </section>
