@@ -7,6 +7,7 @@ export * from './footer/index';
 export * from './header/index';
 export * from './icon-button/index';
 export * from './project-card/index';
+export * from './scroll-reveal/index';
 export * from './section-title/index';
 export * from './skill-tile/index';
 export * from './tabs/index';
