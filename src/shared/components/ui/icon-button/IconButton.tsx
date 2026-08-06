@@ -7,9 +7,9 @@ type IconButtonProps = {
   href: string;
   icon: ComponentType<IconProps>;
   ariaLabel: string;
-  width?: number;
-  height?: number;
-  iconSize?: number;
+  width: number;
+  height: number;
+  iconSize: number;
   className?: string;
 };
 
@@ -17,9 +17,9 @@ export const IconButton = ({
   href,
   icon: Icon,
   ariaLabel,
-  width = 6,
-  height = 6,
-  iconSize = 4.5,
+  width,
+  height,
+  iconSize,
   className,
 }: IconButtonProps) => {
   return (
