@@ -12,6 +12,9 @@ const pretendard = localFont({
 export const metadata: Metadata = {
   title: '양승혜 포트폴리오',
   description: 'Rain Portfolio',
+  icons: {
+    icon: '/imgs/favicon.png',
+  },
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ko' className={pretendard.className}>
-      <body>
+      <body className='pt-[9.8rem]'>
         <Header />
         <main className='px-[8rem] py-[8rem]'>{children}</main>
         <Footer />

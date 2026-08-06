@@ -7,12 +7,14 @@ type SectionTitleProps = {
   title: string;
   showIcon?: boolean;
   icon?: ComponentType<IconProps>;
+  id?: string;
 };
 
 export const SectionTitle = ({
   title,
   showIcon = true,
   icon: Icon = IconRain,
+  id,
 }: SectionTitleProps) => {
   return (
     <div className='flex items-center'>
@@ -22,7 +24,9 @@ export const SectionTitle = ({
         </div>
       )}
       <div className='flex flex-col items-start pr-[2.9rem]'>
-        <p className='display-sb-36 text-black-10 whitespace-nowrap'>{title}</p>
+        <h2 id={id} className='display-sb-36 text-black-10 whitespace-nowrap'>
+          {title}
+        </h2>
         <div className='bg-yellow-1/30 mt-[-1.2rem] h-[1.2rem] w-full' />
       </div>
     </div>

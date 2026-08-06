@@ -38,6 +38,7 @@
 | yellow-3 | `--color-yellow-3` | `#ffec85` |
 | yellow-4 | `--color-yellow-4` | `#ffefb4` |
 | yellow-5 | `--color-yellow-5` | `#fffde1` |
+| yellow-6 | `--color-yellow-6` | `#ebc351` |
 
 ## Gradient
 

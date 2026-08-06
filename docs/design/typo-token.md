@@ -21,6 +21,7 @@
 
 | 클래스          | 크기          | 굵기 | line-height |
 | --------------- | ------------- | ---- | ----------- |
+| `display-sb-50` | 5rem (50px)   | 600  | 1.4         |
 | `display-sb-42` | 4.2rem (42px) | 600  | 1.2         |
 | `display-sb-36` | 3.6rem (36px) | 600  | 1.2         |
 | `display-sb-32` | 3.2rem (32px) | 600  | 1.3         |
@@ -39,6 +40,7 @@
 | `title-20-sb` | 2rem (20px)   | 600  | 1.3         |
 | `title-20-bd` | 2rem (20px)   | 700  | 1.3         |
 | `title-20-md` | 2rem (20px)   | 500  | 1.3         |
+| `title-20-rg` | 2rem (20px)   | 400  | 1.3         |
 
 ### Font (본문)
 
@@ -51,6 +53,7 @@
 | `font-16-sb` | 1.6rem (16px) | 600  | 1.4         |
 | `font-16-md` | 1.6rem (16px) | 500  | 1.3         |
 | `font-16-rg` | 1.6rem (16px) | 400  | 1.3         |
+| `font-23-rg` | 2.3rem (23px) | 400  | 1.3         |
 | `font-14-bd` | 1.4rem (14px) | 600  | 1.4         |
 
 ### Caption
