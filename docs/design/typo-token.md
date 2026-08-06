@@ -40,6 +40,7 @@
 | `title-20-sb` | 2rem (20px)   | 600  | 1.3         |
 | `title-20-bd` | 2rem (20px)   | 700  | 1.3         |
 | `title-20-md` | 2rem (20px)   | 500  | 1.3         |
+| `title-20-rg` | 2rem (20px)   | 400  | 1.3         |
 
 ### Font (본문)
 
