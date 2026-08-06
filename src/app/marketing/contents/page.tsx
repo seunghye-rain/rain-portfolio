@@ -1,6 +1,4 @@
-import { ProjectMore } from './_section/ProjectMore';
-import { ProjectSopt } from './_section/ProjectSopt';
-import { ProjectYoutube } from './_section/ProjectYoutube';
+import { ProjectMore, ProjectSopt, ProjectYoutube } from './_section';
 import { ProjectTabs } from './components/ProjectTabs';
 
 const SECTION_BY_TAB = {
