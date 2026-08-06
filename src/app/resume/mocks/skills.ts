@@ -14,9 +14,11 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: '개발',
     items: [
-      { label: 'Notion', src: '/imgs/skill-content/img-notion.png' },
-      { label: 'Slack', src: '/imgs/skill-content/img-slack.png' },
-      { label: 'Github', src: '/imgs/skill-content/img-github.png' },
+      { label: 'Typescript', src: '/imgs/skill-content/img-typescript.png' },
+      { label: 'JavaScript', src: '/imgs/skill-content/img-js.png' },
+      { label: 'React', src: '/imgs/skill-content/img-react.png' },
+      { label: 'Next.js', src: '/imgs/skill-content/img-nextjs.png' },
+      { label: 'React Native', src: '/imgs/skill-content/img-react.png' },
     ],
   },
   {
@@ -31,11 +33,9 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: '협업',
     items: [
-      { label: 'Typescript', src: '/imgs/skill-content/img-typescript.png' },
-      { label: 'JavaScript', src: '/imgs/skill-content/img-js.png' },
-      { label: 'React', src: '/imgs/skill-content/img-react.png' },
-      { label: 'Next.js', src: '/imgs/skill-content/img-nextjs.png' },
-      { label: 'React Native', src: '/imgs/skill-content/img-react.png' },
+      { label: 'Notion', src: '/imgs/skill-content/img-notion.png' },
+      { label: 'Slack', src: '/imgs/skill-content/img-slack.png' },
+      { label: 'Github', src: '/imgs/skill-content/img-github.png' },
     ],
   },
 ];
