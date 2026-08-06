@@ -23,7 +23,7 @@ export const ProjectSopt = () => {
           className='size-[30rem] shrink-0 object-contain'
         />
         <MainTextLayout
-          title='Description'
+          title='국내 최대 규모 IT벤처 창업 동아리 SOPT 미디어팀 운영'
           period={SOPT_DESCRIPTION.period}
           content={SOPT_DESCRIPTION.paragraphs}
         />
