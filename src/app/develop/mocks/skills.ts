@@ -6,7 +6,7 @@ export type DevelopSkill = {
 };
 
 export const DEVELOP_SKILLS: DevelopSkill[] = [
-  { label: 'Typescript', src: '/imgs/skill-content/img-typescript.png' },
+  { label: 'TypeScript', src: '/imgs/skill-content/img-typescript.png' },
   { label: 'JavaScript', src: '/imgs/skill-content/img-js.png' },
   { label: 'React', src: '/imgs/skill-content/img-react.png' },
   { label: 'Next.js', src: '/imgs/skill-content/img-nextjs.png' },

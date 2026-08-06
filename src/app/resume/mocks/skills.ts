@@ -14,7 +14,7 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: '개발',
     items: [
-      { label: 'Typescript', src: '/imgs/skill-content/img-typescript.png' },
+      { label: 'TypeScript', src: '/imgs/skill-content/img-typescript.png' },
       { label: 'JavaScript', src: '/imgs/skill-content/img-js.png' },
       { label: 'React', src: '/imgs/skill-content/img-react.png' },
       { label: 'Next.js', src: '/imgs/skill-content/img-nextjs.png' },
