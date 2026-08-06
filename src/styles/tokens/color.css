@@ -17,6 +17,9 @@
   --color-yellow-5: #fffde1;
   --color-yellow-6: #ebc351;
 
+  --color-status-yellow-bg: #fff4cf;
+  --color-status-yellow-text: #996d26;
+
   --gradient-bg: linear-gradient(180deg, #fff 14.3%, #fffde1 110.24%);
 }
 

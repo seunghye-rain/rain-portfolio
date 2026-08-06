@@ -16,7 +16,13 @@ type TabItemProps = {
   activeValue: string;
   children: ReactNode;
   className?: string;
+  size?: 'md' | 'lg';
 } & ({ href: string; onClick?: never } | { href?: never; onClick: () => void });
+
+const SIZE_CLASS_NAME = {
+  md: 'title-23-md',
+  lg: 'title-26-md',
+};
 
 const Tabs = ({ className, children, ...props }: TabsProps) => {
   return (
@@ -38,10 +44,19 @@ const TabsList = ({ className, children, ...props }: TabsListProps) => {
   );
 };
 
-const TabItem = ({ value, activeValue, children, className, href, onClick }: TabItemProps) => {
+const TabItem = ({
+  value,
+  activeValue,
+  children,
+  className,
+  href,
+  onClick,
+  size = 'md',
+}: TabItemProps) => {
   const isActive = value === activeValue;
   const itemClassName = cn(
-    'title-23-md flex items-center justify-center border-b-[0.2rem] px-[0.4rem] pb-[1rem] transition-colors duration-200',
+    SIZE_CLASS_NAME[size],
+    'flex items-center justify-center border-b-[0.2rem] px-[0.4rem] pb-[1rem] transition-colors duration-200',
     isActive ? 'border-yellow-1 text-yellow-1' : 'text-black-7 border-transparent',
     className,
   );

@@ -2,48 +2,47 @@
 
 import { useEffect, useRef } from 'react';
 
-import { IconSmartphone } from '@/shared/assets';
 import { SectionTitle, Tabs } from '@/shared/components/ui';
 
 const TAB_ITEMS = [
-  { value: 'sopt', label: 'SOPT', href: '/marketing/contents?tab=sopt' },
-  { value: 'youtube', label: 'YouTube', href: '/marketing/contents?tab=youtube' },
-  { value: 'more', label: '더보기', href: '/marketing/contents?tab=more' },
+  { value: 'all', label: 'ALL', href: '/develop?platform=all' },
+  { value: 'web', label: 'WEB', href: '/develop?platform=web' },
+  { value: 'app', label: 'APP', href: '/develop?platform=app' },
 ] as const;
 
-type ProjectTabsProps = {
-  activeTab: string;
+type ProjectFilterTabsProps = {
+  activePlatform: string;
 };
 
-export const ProjectTabs = ({ activeTab }: ProjectTabsProps) => {
+export const ProjectFilterTabs = ({ activePlatform }: ProjectFilterTabsProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const prevTabRef = useRef(activeTab);
+  const prevPlatformRef = useRef(activePlatform);
 
   useEffect(() => {
-    const hasChanged = prevTabRef.current !== activeTab;
-    prevTabRef.current = activeTab;
+    const hasChanged = prevPlatformRef.current !== activePlatform;
+    prevPlatformRef.current = activePlatform;
     if (!hasChanged) return;
 
     const bottom = ref.current?.getBoundingClientRect().bottom;
     if (bottom === undefined) return;
     window.scrollTo({ top: window.scrollY + bottom, behavior: 'smooth' });
-  }, [activeTab]);
+  }, [activePlatform]);
 
   return (
     <div
       ref={ref}
       className='bg-black-1 sticky top-[9.8rem] z-40 -mx-[8rem] flex w-[calc(100%+16rem)] flex-col items-center px-[8rem]'
     >
-      <SectionTitle id='marketing-contents-project-title' title='Project' icon={IconSmartphone} />
+      <SectionTitle id='develop-project-title' title='Project' emoji='💻' />
       <Tabs>
         <Tabs.List className='justify-center'>
           {TAB_ITEMS.map((tab) => (
             <Tabs.Item
               key={tab.value}
               value={tab.value}
-              activeValue={activeTab}
+              activeValue={activePlatform}
               href={tab.href}
-              size='md'
+              size='lg'
             >
               {tab.label}
             </Tabs.Item>
