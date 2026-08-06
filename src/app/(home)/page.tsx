@@ -63,7 +63,7 @@ export default function Home() {
           </div>
 
           <p className='font-23-rg text-black-8 text-center tracking-[0.2rem]'>
-            직접 제작한 콘텐츠로 사람들을 끌어들이는{' '}
+            직접 제작한 콘텐츠로 사람들을 끌어들이는
             <span className='text-black-10 font-medium'>마케터</span>이자 사용자를 먼저 생각하는{' '}
             <span className='text-black-10 font-medium'>프론트엔드 개발자</span>입니다.
             <br />
