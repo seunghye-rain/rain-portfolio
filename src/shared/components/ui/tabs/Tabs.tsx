@@ -14,10 +14,9 @@ type TabsListProps = HTMLAttributes<HTMLDivElement> & {
 type TabItemProps = {
   value: string;
   activeValue: string;
-  href: string;
   children: ReactNode;
   className?: string;
-};
+} & ({ href: string; onClick?: never } | { href?: never; onClick: () => void });
 
 const Tabs = ({ className, children, ...props }: TabsProps) => {
   return (
@@ -39,23 +38,38 @@ const TabsList = ({ className, children, ...props }: TabsListProps) => {
   );
 };
 
-const TabItem = ({ value, activeValue, href, children, className }: TabItemProps) => {
+const TabItem = ({ value, activeValue, children, className, href, onClick }: TabItemProps) => {
   const isActive = value === activeValue;
+  const itemClassName = cn(
+    'title-23-md flex items-center justify-center border-b-[0.2rem] px-[0.4rem] pb-[1rem] transition-colors duration-200',
+    isActive ? 'border-yellow-1 text-yellow-1' : 'text-black-7 border-transparent',
+    className,
+  );
+
+  if (href) {
+    return (
+      <Link
+        role='tab'
+        aria-selected={isActive}
+        href={href}
+        scroll={false}
+        className={itemClassName}
+      >
+        {children}
+      </Link>
+    );
+  }
 
   return (
-    <Link
+    <button
+      type='button'
       role='tab'
       aria-selected={isActive}
-      href={href}
-      scroll={false}
-      className={cn(
-        'title-26-md flex items-center justify-center border-b-[0.2rem] px-[0.4rem] pb-[1rem] transition-colors duration-200',
-        isActive ? 'border-yellow-1 text-yellow-1' : 'text-black-7 border-transparent',
-        className,
-      )}
+      onClick={onClick}
+      className={itemClassName}
     >
       {children}
-    </Link>
+    </button>
   );
 };
 
