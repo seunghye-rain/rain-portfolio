@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
-import { IconDownbutton, IconSlideup } from '@/shared/assets';
+import { IconDownbutton } from '@/shared/assets';
 import { FeatureTextLayout } from '@/shared/components/layout';
 
 type AccordionProps = {
@@ -18,17 +18,22 @@ export const Accordion = ({ title, period, details, defaultOpen = false }: Accor
 
   return (
     <div className='bg-black-1 inline-flex flex-col self-start rounded-[2rem] px-[2.4rem] py-[1.4rem]'>
-      <div className='flex items-center justify-between gap-[1.6rem]'>
+      <button
+        type='button'
+        onClick={() => setIsOpen((prev) => !prev)}
+        aria-expanded={isOpen}
+        className='flex items-center justify-between gap-[1.6rem]'
+      >
         <FeatureTextLayout title={title} subtitle={period} />
-        <button
-          type='button'
-          onClick={() => setIsOpen((prev) => !prev)}
-          aria-expanded={isOpen}
-          className='relative size-[3.5rem] shrink-0 overflow-hidden rounded-full transition-transform duration-300 ease-in-out'
-        >
-          {isOpen ? <IconSlideup /> : <IconDownbutton />}
-        </button>
-      </div>
+        <span className='relative flex size-[4rem] shrink-0 items-center justify-center overflow-hidden rounded-full'>
+          <IconDownbutton
+            className={cn(
+              'size-[4rem] transition-transform duration-300 ease-in-out',
+              isOpen && 'rotate-180',
+            )}
+          />
+        </span>
+      </button>
       <div
         className={cn(
           'grid w-0 min-w-full transition-[grid-template-rows] duration-300 ease-in-out',

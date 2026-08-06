@@ -27,6 +27,13 @@
     letter-spacing: -0.2px;
   }
 
+  .title-32-md {
+    font-size: 3.2rem;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+  }
+
   .title-30-eb {
     font-size: 3rem;
     font-weight: 700;
