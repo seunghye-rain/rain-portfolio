@@ -6,6 +6,7 @@ export * from './divider/index';
 export * from './footer/index';
 export * from './header/index';
 export * from './icon-button/index';
+export * from './numbered-item/index';
 export * from './project-card/index';
 export * from './scroll-reveal/index';
 export * from './section-title/index';
