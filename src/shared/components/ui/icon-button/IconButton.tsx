@@ -1,0 +1,38 @@
+import type { ComponentType } from 'react';
+
+import { cn } from '@/lib/utils';
+import type { IconProps } from '@/shared/assets';
+
+type IconButtonProps = {
+  href: string;
+  icon: ComponentType<IconProps>;
+  ariaLabel: string;
+  width: number;
+  height: number;
+  iconSize: number;
+  className?: string;
+};
+
+export const IconButton = ({
+  href,
+  icon: Icon,
+  ariaLabel,
+  width,
+  height,
+  iconSize,
+  className,
+}: IconButtonProps) => {
+  return (
+    <a
+      href={href}
+      aria-label={ariaLabel}
+      style={{ width: `${width}rem`, height: `${height}rem` }}
+      className={cn(
+        'bg-black-1 flex shrink-0 items-center justify-center overflow-hidden rounded-full',
+        className,
+      )}
+    >
+      <Icon style={{ width: `${iconSize}rem`, height: `${iconSize}rem` }} />
+    </a>
+  );
+};

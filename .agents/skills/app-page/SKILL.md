@@ -27,16 +27,20 @@ Next.js App Router 페이지, route, layout과 화면 흐름을 src/app 하위�
 
 1. route 경로와 진입 흐름을 확인합니다. (`src/app/(home)`, `resume`, `marketing`, `develop`, `article` 중 어디인지, 신규 route인지)
 2. 이 페이지에서만 쓰는 코드(mock 데이터, 컴포넌트)는 해당 페이지 폴더 하위에 둡니다. 다른 페이지에서도 필요해지는 게 확인된 시점에만 `src/shared`로 옮깁니다. 지금 당장 재사용 가능성만으로 미리 옮기지 않습니다.
-3. `page.tsx`, `layout.tsx`는 기본적으로 Server Component로 둡니다. `useState`, 이벤트 핸들러, `useEffect`, 브라우저 API가 필요한 가장 작은 단위에만 `'use client'`를 붙입니다. 페이지 전체를 클라이언트 경계로 만들지 않습니다.
-4. 크기·간격 값은 px 대신 rem을 사용합니다. Tailwind 기본 유틸리티(`p-4`, `gap-2` 등)는 이미 rem 기반이라 그대로 쓰면 되고, 기본 스케일에 없는 값만 `w-[1.125rem]`처럼 임의값을 rem으로 씁니다.
-5. 색상/타이포는 `src/styles/tokens`의 디자인 토큰을 사용합니다. hex 값을 직접 쓰지 않습니다.
-6. 클래스를 조건부로 조합할 때는 `cn()`(`src/lib/utils.ts`)을 사용합니다.
-7. 2단계(`../../`) 이상 상위 경로를 참조해야 하면 절대 경로(`@/`)를 씁니다.
+3. 화면을 조립하기 전에 `src/shared/components/ui`, `src/shared/components/layout`에 쓸 수 있는 컴포넌트가 있는지 먼저 찾아봅니다. 피그마 디자인과 스타일이 살짝 다르더라도(간격, 폰트 크기 등) 이미 개발되어 있는 컴포넌트가 있다면 새로 만들지 않고, 그 컴포넌트를 확장(props 추가 등)해서 재사용합니다. 이때 기준은 피그마 값이 아니라 기존 컴포넌트입니다.
+4. `page.tsx`, `layout.tsx`는 기본적으로 Server Component로 둡니다. `useState`, 이벤트 핸들러, `useEffect`, 브라우저 API가 필요한 가장 작은 단위에만 `'use client'`를 붙입니다. 페이지 전체를 클라이언트 경계로 만들지 않습니다.
+5. 크기·간격 값은 px 대신 rem을 사용합니다. Tailwind 기본 유틸리티(`p-4`, `gap-2` 등)는 이미 rem 기반이라 그대로 쓰면 되고, 기본 스케일에 없는 값만 `w-[1.125rem]`처럼 임의값을 rem으로 씁니다.
+6. 색상/타이포는 `src/styles/tokens`의 디자인 토큰을 사용합니다. hex 값을 직접 쓰지 않습니다.
+7. 클래스를 조건부로 조합할 때는 `cn()`(`src/lib/utils.ts`)을 사용합니다.
+8. 2단계(`../../`) 이상 상위 경로를 참조해야 하면 절대 경로(`@/`)를 씁니다.
+9. 여러 콘텐츠 블록으로 구성된 페이지를 퍼블리싱할 때는 의미 단위로 `<section>` 태그를 나눕니다. section에 제목이 있다면 `<p>`가 아니라 적절한 heading 태그(`h1`~`h6`)로 렌더링하고, `aria-labelledby`로 section과 연결합니다.
 
 ## 점검해야 할 내용
 
 - 페이지 전용 코드와 `shared`로 옮길 코드가 명확히 구분되어 있는가?
+- 새로 만들기 전에 `shared/components/ui`, `shared/components/layout`에서 재사용할 컴포넌트를 찾아봤는가? 스타일 차이가 있을 때 피그마가 아니라 기존 컴포넌트 기준으로 맞췄는가?
 - 불필요하게 넓은 `'use client'` 경계가 없는가?
 - rem 단위, 디자인 토큰, `cn()` 사용 기준을 지켰는가?
 - `conventions.md`의 네이밍/import 규칙을 지켰는가?
+- 콘텐츠 블록이 의미 단위로 `<section>`과 heading 태그로 나뉘어 있는가?
 - loading/empty/error 등 화면에 필요한 상태가 요구사항만큼 처리되어있는가?

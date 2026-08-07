@@ -1,0 +1,37 @@
+/**
+ * ⚠️ 자동 생성된 파일입니다. 직접 수정하지 마세요.
+ */
+
+import type { SVGProps } from 'react';
+
+const IconSlideup = (props: SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns='http://www.w3.org/2000/svg'
+    xmlnsXlink='http://www.w3.org/1999/xlink'
+    width={24}
+    height={24}
+    fill='none'
+    {...props}
+    viewBox='0 0 24 24'
+  >
+    <path fill='url(#icon-slideup_svg__a)' d='M0 0h24v24H0z' />
+    <defs>
+      <pattern
+        id='icon-slideup_svg__a'
+        width={1}
+        height={1}
+        patternContentUnits='objectBoundingBox'
+      >
+        <use xlinkHref='#icon-slideup_svg__b' transform='scale(.01111)' />
+      </pattern>
+      <image
+        xlinkHref='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPUlEQVR4nO2dS28cRRDHWwpPgeDIUwIEfAEeJ0BEiIdyQMDBIAFBhEcugIJxvFXrHMyNxymKxNcIr0MQOXAEISNC7DDVExkQ4k1sFhEzVavgQTXeAwqxvdnp6e7Z7b9U0mq9OzP9c21Nd3V1jzFJSUlJSUlJSUlJSUlJw6ksp3b0Ce8U6j4vhG+LxffY4nEhXGaLq2xBNgxXB+8d18+Ihbf0O/1s9g49xpCnmyyt5Z3rmfBVIfiQCf4Ui2UdY8KeEH7AGexbs3PXmUlW+f30pUK4WwiPMsE/deFuAf2MEH4sBE+X385fYiZF5dL85eppYvHHpuBuDh1+Ewuvl8twpRlXlQt7L2QLs2xxxTfg/wG3uMIWZvSazDipb7v3sIXF0IDPYVRYvN+0XRoT2cI7TLgeAdRNwgmuC+GhMn/lYtNGFRncyASfhQYpQwOHL4qTeItpk/Tn6KKbJv69u1cQ3GfaILbwGBMUoaHJqLAtiBA+YWJW3+LeJvvE4s2ztQ3dF02MYuo+Wg0OIgAlrmBT53ETkzSuMSGHhiOuYVuQIscHTQziE7O3tvHGJ0N7NvaKfP/NQSFr31O7RaFhSOOejQtB+9k6GAkNQXwZ4aFww+qIR3zi2qsJ1/t5916vkMtP5i9gC1+Fbrz4hm1h0WsiSrNwoRstwTwbpv3lky2cCt1gCefVp5RB46CZEEI3VsLDnvEw/QS/BGkcIes/+fTS/qvV9HW4QRL81Oi0mFh4JpAHCefw8NnXU2Sdh4IlsHJ4sjnQhEdjgRweNhwxTUin7X0njXgbyCFha9KpkVKGqu7Ce0zu7Br++jq7fMfswuLLzkFrcUtsnhzcswkPG5fSEism+CNmyCFgKxOn5WdVLVwk4YKrEDHMZ/yEkX6GtzsDLQQvxODJxcBbz+ezjcPOcY9D0FVVZxSQpcZ3GrI33IG28H5MkCUm2C5viE2lRHnomLx5vHVxjHptgC+dgRYL38XkyRKVZ8M3zkC7rgDlBsCEgs0Wf3cIGiRmyBIQtoak6ECzBxC+YTsGXT90sEcAfs/lMHTUvRlyiJ+0t3M6vRmO3r0L2f1iD+d23L3TdXwjNxZCQD4/2IBRDFjqDMF1fs8EzkdsF0b+Wu5eFccQXFexOgZdeM4dbwV7LZu9dvRjw7NRpEn1Z2kimA3ZKoywxe7Ixz05d5vjxD/2RvYkAjz99dw1avo6ZC31BuyzrmfEcYKuR3e+7lzXVoeCI7Ga66ks1WBZcfjG2XisIHjJOWi9YYzTGhWpacpiqx5VLVW7BETQSInCGiqgGYDeHb6BGIc1WRKmhX0htn+Q+OxnLfg0TWqSi9BlYEz4mmla5bGZyzQ1OLGQradCdJUWYk8s6Az2Ga+LhQiPTaA3L3rftaZPcHda/uZJusgxNADxZwdN0CXKFhfG3pstfF4uzV9kQkoXpI+a2ZMWmJbmFnTgJhODigx2tnnXGdnck6XIOw+YmMQEj4zfxig4ZWKUbo8zHlv94BmtCTcxa2PLn/aGEdbZn9i2+Nlm659eK298Gew0bdLfJw7cwISftgayxYXgW/rU6WfroIYjHkEOru1g8H6ys+G6jW8jFb2mPnXvMuOkskpEwXQMKVa9Bs3C6TWZcVWp+WydUSf4wTtkwl+rjbrz+SvMpKjUabEMnxKLHzU50Nk4NhzROb6J2nr+XNKKIV3ALhberZ5GUT80rOqxtO6isZKAtqssp3ZoPZtk8JxYfFOrgbQGefAokJX/PB5kpXpv42+Hq8/muEe/mx4PkpSUlJSUlJSUlJSUZIbXv6HBoz+LWdMlAAAAAElFTkSuQmCC'
+        id='icon-slideup_svg__b'
+        width={90}
+        height={90}
+        preserveAspectRatio='none'
+      />
+    </defs>
+  </svg>
+);
+export default IconSlideup;
