@@ -4,11 +4,38 @@ type MainTextLayoutProps = {
   title: string;
   period?: string;
   content: string | string[];
+  boldPhrases?: string[];
   className?: string;
 };
 
-export const MainTextLayout = ({ title, period, content, className }: MainTextLayoutProps) => {
+const escapeRegularExpression = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+export const MainTextLayout = ({
+  title,
+  period,
+  content,
+  boldPhrases = [],
+  className,
+}: MainTextLayoutProps) => {
   const paragraphs = Array.isArray(content) ? content : [content];
+  const boldPhrasePattern = new RegExp(
+    `(${boldPhrases.map(escapeRegularExpression).join('|')})`,
+    'g',
+  );
+
+  const renderParagraph = (paragraph: string) => {
+    if (!boldPhrases.some((phrase) => paragraph.includes(phrase))) return paragraph;
+
+    return paragraph.split(boldPhrasePattern).map((part) =>
+      boldPhrases.includes(part) ? (
+        <strong key={part} className='title-20-md text-black-10'>
+          {part}
+        </strong>
+      ) : (
+        part
+      ),
+    );
+  };
 
   return (
     <div className={cn('flex flex-col items-start gap-[2.4rem]', className)}>
@@ -22,7 +49,7 @@ export const MainTextLayout = ({ title, period, content, className }: MainTextLa
       </div>
       <div className='title-20-rg text-black-9 flex flex-col gap-[1.2rem]'>
         {paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>{renderParagraph(paragraph)}</p>
         ))}
       </div>
     </div>

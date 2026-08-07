@@ -4,6 +4,7 @@ export type ContentBox = {
   href: string;
   title: string;
   description: string[];
+  boldPhrases: string[];
 };
 
 export const CONTENT_BOXES: ContentBox[] = [
@@ -16,6 +17,7 @@ export const CONTENT_BOXES: ContentBox[] = [
       '개인 유튜브 채널을 1년 5개월간 운영하며 56편으로 누적 조회수 460만 회를, SOPT에서 기획·촬영·편집하며 역대 기수 미디어팀 중 가장 많은 콘텐츠를 만들어냈습니다.',
       '사진을 찍는 것을 좋아하고 이를 나누고 싶은 마음이 그대로 서비스가 되는 곳에서, 제가 가장 좋아하는 방식으로 사람들을 모으고 싶습니다.',
     ],
+    boldPhrases: ['개인 유튜브 채널을 1년 5개월간 운영', 'SOPT에서 기획·촬영·편집'],
   },
   {
     href: '/marketing/planning',
@@ -26,5 +28,6 @@ export const CONTENT_BOXES: ContentBox[] = [
       '준비한 자리가 사람들로 가득 차고 그 안에서 즐기는 모습을 보는 순간이 가장 보람찼고, 그때부터 "어떻게 하면 더 많은 사람에게 닿을 수 있을까"를 늘 함께 고민하게 됐습니다.',
       '좋은 경험을 만드는 일과 그것을 알리는 일은 저에게 하나의 일입니다.',
     ],
+    boldPhrases: ['"어떠한 사람이 기획물을 보고 참여했을 때 무엇을 가져갈 수 있을까?"'],
   },
 ];
