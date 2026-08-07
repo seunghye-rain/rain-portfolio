@@ -3,8 +3,11 @@ import { cn } from '@/lib/utils';
 type ContentWriteBoxProps = {
   title: string;
   description: string | string[];
+  boldPhrases?: string[];
   variant?: 'default' | 'stat';
 };
+
+const escapeRegularExpression = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const CONTAINER_CLASS_NAME = {
   default: 'rounded-[1.6rem] px-[5rem] py-[4rem]',
@@ -19,9 +22,28 @@ const DESCRIPTION_CLASS_NAME = {
 export const ContentWriteBox = ({
   title,
   description,
+  boldPhrases = [],
   variant = 'default',
 }: ContentWriteBoxProps) => {
   const paragraphs = Array.isArray(description) ? description : [description];
+  const boldPhrasePattern = new RegExp(
+    `(${boldPhrases.map(escapeRegularExpression).join('|')})`,
+    'g',
+  );
+
+  const renderParagraph = (paragraph: string) => {
+    if (!boldPhrases.some((phrase) => paragraph.includes(phrase))) return paragraph;
+
+    return paragraph.split(boldPhrasePattern).map((part) =>
+      boldPhrases.includes(part) ? (
+        <strong key={part} className='title-20-md text-black-10'>
+          {part}
+        </strong>
+      ) : (
+        part
+      ),
+    );
+  };
 
   return (
     <div
@@ -33,7 +55,7 @@ export const ContentWriteBox = ({
       <span className='title-30-eb text-black-10 text-center'>{title}</span>
       <div className={DESCRIPTION_CLASS_NAME[variant]}>
         {paragraphs.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>{renderParagraph(paragraph)}</p>
         ))}
       </div>
     </div>

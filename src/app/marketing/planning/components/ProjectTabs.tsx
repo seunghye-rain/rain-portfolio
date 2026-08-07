@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
 import { IconSmartphone } from '@/shared/assets';
 import { SectionTitle, Tabs } from '@/shared/components/ui';
+import { useScrollToTopOnChange } from '@/shared/hooks/useScrollToTopOnChange';
 
 const TAB_ITEMS = [
   { value: 'sopt', label: 'SOPT', href: '/marketing/planning?tab=sopt' },
@@ -15,18 +14,7 @@ type ProjectTabsProps = {
 };
 
 export const ProjectTabs = ({ activeTab }: ProjectTabsProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const prevTabRef = useRef(activeTab);
-
-  useEffect(() => {
-    const hasChanged = prevTabRef.current !== activeTab;
-    prevTabRef.current = activeTab;
-    if (!hasChanged) return;
-
-    const bottom = ref.current?.getBoundingClientRect().bottom;
-    if (bottom === undefined) return;
-    window.scrollTo({ top: window.scrollY + bottom, behavior: 'smooth' });
-  }, [activeTab]);
+  const ref = useScrollToTopOnChange(activeTab);
 
   return (
     <div

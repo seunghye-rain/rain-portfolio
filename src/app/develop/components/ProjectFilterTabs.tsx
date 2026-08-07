@@ -1,8 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
 import { SectionTitle, Tabs } from '@/shared/components/ui';
+import { useScrollToTopOnChange } from '@/shared/hooks/useScrollToTopOnChange';
 
 const TAB_ITEMS = [
   { value: 'all', label: 'ALL', href: '/develop?platform=all' },
@@ -15,18 +14,7 @@ type ProjectFilterTabsProps = {
 };
 
 export const ProjectFilterTabs = ({ activePlatform }: ProjectFilterTabsProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const prevPlatformRef = useRef(activePlatform);
-
-  useEffect(() => {
-    const hasChanged = prevPlatformRef.current !== activePlatform;
-    prevPlatformRef.current = activePlatform;
-    if (!hasChanged) return;
-
-    const bottom = ref.current?.getBoundingClientRect().bottom;
-    if (bottom === undefined) return;
-    window.scrollTo({ top: window.scrollY + bottom, behavior: 'smooth' });
-  }, [activePlatform]);
+  const ref = useScrollToTopOnChange(activePlatform);
 
   return (
     <div

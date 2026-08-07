@@ -15,7 +15,7 @@
 
 @theme {
   --animate-fade-in: fade-in 2s ease-out;
-  --animate-marquee: marquee 20s linear infinite;
+  --animate-marquee: marquee 30s linear infinite;
   --animate-rise-up: rise-up 0.6s ease-out both;
 }
 
