@@ -4,6 +4,12 @@ import { MainTextLayout } from '@/shared/components/layout';
 import { ContentWriteBox, CtaButton, NumberedItem, ScrollReveal } from '@/shared/components/ui';
 
 import {
+  imgContentsSoptPart1,
+  imgContentsSoptPart2,
+  imgContentsSoptSoptlist1,
+  imgContentsSoptSoptlist2,
+} from '../assets';
+import {
   SOPT_ACTION_ITEMS,
   SOPT_DESCRIPTION,
   SOPT_OBJECT,
@@ -77,18 +83,30 @@ export const ProjectSopt = () => {
         ))}
       </ScrollReveal>
 
-      <ScrollReveal className='flex w-full flex-col items-start gap-[3.2rem]'>
-        <h3 className='display-sb-32 text-black-10'>대표 콘텐츠</h3>
-        <div className='flex w-full flex-col gap-[2.4rem]'>
-          <div className='bg-black-1 flex h-[72rem] w-full items-center justify-center rounded-[1.6rem]'>
-            <p className='title-20-md text-black-9'>
-              SOPTLIST 관련 추후 이미지 해당 비율로 임베디드 예정
-            </p>
+      <ScrollReveal className='flex w-full flex-col items-start'>
+        <div className='flex flex-col gap-[4rem]'>
+          <h3 className='display-sb-32 text-black-10'>대표 콘텐츠 - SOPTLIST</h3>
+          <div className='flex w-full flex-col gap-[2.4rem]'>
+            <Image
+              src={imgContentsSoptSoptlist1}
+              alt='SOPTLIST'
+              className='w-full rounded-[0.8rem]'
+            />
+            <Image
+              src={imgContentsSoptSoptlist2}
+              alt='SOPTLIST'
+              className='w-full rounded-[0.8rem]'
+            />
           </div>
-          <div className='bg-black-1 flex h-[72rem] w-full items-center justify-center rounded-[1.6rem]'>
-            <p className='title-20-md text-black-9'>
-              파트장 영통 팬싸 관련 추후 이미지 해당 비율로 임베디드 예정
-            </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal className='flex w-full flex-col items-start'>
+        <div className='flex flex-col gap-[4rem]'>
+          <h3 className='display-sb-32 text-black-10'>대표 콘텐츠 - 파트장 영통 팬사인회</h3>
+          <div className='flex w-full flex-col gap-[2.4rem]'>
+            <Image src={imgContentsSoptPart1} alt='SOPTLIST' className='w-full rounded-[0.8rem]' />
+            <Image src={imgContentsSoptPart2} alt='SOPTLIST' className='w-full rounded-[0.8rem]' />
           </div>
         </div>
       </ScrollReveal>

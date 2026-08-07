@@ -34,3 +34,7 @@ export { default as imgSoptlistCardnews1 } from './img-soptlist-cardnews-1.png';
 export { default as imgSoptlistCardnews2 } from './img-soptlist-cardnews-2.png';
 export { default as imgTurncoat } from './img-turncoat.png';
 export { default as imgYbRecruitingThumbnail } from './img-yb-recruiting-thumnail.png';
+export { default as imgContentsSoptPart1 } from './project/img-contents-sopt-part-1.png';
+export { default as imgContentsSoptPart2 } from './project/img-contents-sopt-part-2.png';
+export { default as imgContentsSoptSoptlist1 } from './project/img-contents-sopt-soptlist-1.png';
+export { default as imgContentsSoptSoptlist2 } from './project/img-contents-sopt-soptlist-2.png';
