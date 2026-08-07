@@ -23,9 +23,17 @@ export const ProjectTabs = ({ activeTab }: ProjectTabsProps) => {
     prevTabRef.current = activeTab;
     if (!hasChanged) return;
 
-    const bottom = ref.current?.getBoundingClientRect().bottom;
-    if (bottom === undefined) return;
-    window.scrollTo({ top: window.scrollY + bottom, behavior: 'smooth' });
+    const el = ref.current;
+    if (!el) return;
+
+    // sticky 상태에서는 getBoundingClientRect가 화면에 고정된 현재 위치를 돌려줘서
+    // 실제 문서상 위치를 알 수 없다. 잠깐 static으로 풀어 원래 위치를 잰 뒤 되돌린다.
+    const prevPosition = el.style.position;
+    el.style.position = 'static';
+    const naturalTop = el.getBoundingClientRect().top + window.scrollY;
+    el.style.position = prevPosition;
+
+    window.scrollTo({ top: naturalTop, behavior: 'smooth' });
   }, [activeTab]);
 
   return (
