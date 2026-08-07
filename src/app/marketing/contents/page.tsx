@@ -30,6 +30,7 @@ export default async function MarketingContentsPage({ searchParams }: MarketingC
             <br />
             그 답을 콘텐츠와 카피로 만들어 직접 세상에 내놓습니다.
             <br />
+            <br />
             기획부터 촬영·편집·업로드까지 가능하며,
             <br />
             생성형 AI를 초안과 카피를 빠르게 만들어내는 도구 등 다방면으로 사용합니다.
