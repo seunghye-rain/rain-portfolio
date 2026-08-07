@@ -157,7 +157,7 @@ export const SHORTFORM_PROJECTS: MoreProjectCard[] = [
   {
     title: 'Dna Lab 활동 릴스 ①',
     description: '외국인 유학생과 함께 하는 봉사활동 vlog',
-    href: 'https://www.instagram.com/reel/C0TAqXYyc14/',
+    href: 'https://www.instagram.com/reel/C0dQDLASL-u/',
     image: imgDnaLabVlog,
   },
   {
