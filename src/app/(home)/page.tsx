@@ -87,6 +87,7 @@ export default function Home() {
                 className='w-[50rem]'
                 title={advantage.title}
                 content={advantage.paragraphs}
+                boldPhrases={advantage.boldPhrases}
               />
             ))}
           </div>

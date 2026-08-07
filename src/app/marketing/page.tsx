@@ -37,6 +37,7 @@ export default function MarketingPage() {
                 href={box.href}
                 title={box.title}
                 description={box.description}
+                boldPhrases={box.boldPhrases}
               />
             ))}
           </ScrollReveal>
