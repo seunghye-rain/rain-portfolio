@@ -26,6 +26,8 @@ export const ProjectMore = () => {
                 imageSrc={project.image}
                 imageAlt={project.title}
                 imageRatio={section.imageRatio}
+                target='_blank'
+                rel='noopener noreferrer'
               />
             ))}
           </div>

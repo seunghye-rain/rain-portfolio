@@ -15,6 +15,8 @@ type ProjectCardProps = {
   href: string;
   imageRatio?: ImageRatio;
   platform?: Platform;
+  target?: '_self' | '_blank';
+  rel?: 'noopener noreferrer';
 };
 
 export const ProjectCard = ({
@@ -25,10 +27,14 @@ export const ProjectCard = ({
   href,
   imageRatio = 'default',
   platform,
+  target = '_self',
+  rel = 'noopener noreferrer',
 }: ProjectCardProps) => {
   return (
     <a
       href={href}
+      target={target}
+      rel={rel}
       className='border-black-4 bg-black-1 flex w-[30rem] flex-col items-start gap-[1rem] rounded-[1.6rem] border pb-[1.2rem] shadow-[0_0.4rem_1.2rem_0_rgba(0,0,0,0.06)]'
     >
       <div
