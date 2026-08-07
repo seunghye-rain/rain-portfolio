@@ -7,12 +7,18 @@ type HoverableContentBoxProps = {
   href: string;
   title: string;
   description: string[];
+  boldPhrases: string[];
 };
 
-export const HoverableContentBox = ({ href, title, description }: HoverableContentBoxProps) => {
+export const HoverableContentBox = ({
+  href,
+  title,
+  description,
+  boldPhrases,
+}: HoverableContentBoxProps) => {
   return (
     <Link href={href} className='group relative block self-start overflow-hidden rounded-[1.6rem]'>
-      <ContentWriteBox title={title} description={description} />
+      <ContentWriteBox title={title} description={description} boldPhrases={boldPhrases} />
       <div className='bg-black-7/60 absolute inset-0 flex items-center justify-center gap-[2rem] opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100'>
         <span className='display-sb-42 text-black-10'>더 알아보기</span>
         <span className='bg-black-1 flex size-[5rem] shrink-0 items-center justify-center rounded-full'>
