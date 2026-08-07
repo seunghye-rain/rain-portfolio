@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-
 import { IconSmartphone } from '@/shared/assets';
 import { SectionTitle, Tabs } from '@/shared/components/ui';
+import { useScrollToTopOnChange } from '@/shared/hooks/useScrollToTopOnChange';
 
 const TAB_ITEMS = [
   { value: 'sopt', label: 'SOPT', href: '/marketing/contents?tab=sopt' },
@@ -16,26 +15,7 @@ type ProjectTabsProps = {
 };
 
 export const ProjectTabs = ({ activeTab }: ProjectTabsProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const prevTabRef = useRef(activeTab);
-
-  useEffect(() => {
-    const hasChanged = prevTabRef.current !== activeTab;
-    prevTabRef.current = activeTab;
-    if (!hasChanged) return;
-
-    const el = ref.current;
-    if (!el) return;
-
-    // sticky 상태에서는 getBoundingClientRect가 화면에 고정된 현재 위치를 돌려줘서
-    // 실제 문서상 위치를 알 수 없다. 잠깐 static으로 풀어 원래 위치를 잰 뒤 되돌린다.
-    const prevPosition = el.style.position;
-    el.style.position = 'static';
-    const naturalTop = el.getBoundingClientRect().top + window.scrollY;
-    el.style.position = prevPosition;
-
-    window.scrollTo({ top: naturalTop, behavior: 'smooth' });
-  }, [activeTab]);
+  const ref = useScrollToTopOnChange(activeTab);
 
   return (
     <div
