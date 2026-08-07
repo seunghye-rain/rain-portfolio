@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { MainTextLayout } from '@/shared/components/layout';
 import { ScrollReveal } from '@/shared/components/ui';
 
-import { GDGOC_ACTION_ITEMS, GDGOC_DESCRIPTION } from '../mocks/gdgocProject';
+import { imgPlanningGdgocAction1, imgPlanningGdgocAction2 } from '../assets';
+import { GDGOC_DESCRIPTION } from '../mocks/gdgocProject';
 
 export const ProjectGdgoc = () => {
   return (
@@ -23,18 +24,14 @@ export const ProjectGdgoc = () => {
         />
       </ScrollReveal>
 
-      <ScrollReveal className='flex w-full flex-col items-start gap-[3.2rem]'>
-        <h3 className='display-sb-32 text-black-10'>Action</h3>
-        <div className='flex w-full flex-col gap-[2.4rem]'>
-          {GDGOC_ACTION_ITEMS.map((item) => (
-            <div
-              key={item}
-              className='bg-black-1 flex h-[72rem] w-full items-center justify-center rounded-[1.6rem]'
-            >
-              <p className='title-20-md text-black-9'>{item}</p>
-            </div>
-          ))}
-        </div>
+      <ScrollReveal className='flex w-full flex-col items-start gap-[4rem]'>
+        <h3 className='display-sb-32 text-black-10'>Action - DevFesta</h3>
+        <Image src={imgPlanningGdgocAction1} alt='GDGoC 기획' className='w-full rounded-[0.8rem]' />
+      </ScrollReveal>
+
+      <ScrollReveal className='flex w-full flex-col items-start gap-[4rem]'>
+        <h3 className='display-sb-32 text-black-10'>Action - Home Coming Day</h3>
+        <Image src={imgPlanningGdgocAction2} alt='GDGoC 기획' className='w-full rounded-[0.8rem]' />
       </ScrollReveal>
     </>
   );

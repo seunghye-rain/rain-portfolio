@@ -3,7 +3,8 @@ import Image from 'next/image';
 import { MainTextLayout } from '@/shared/components/layout';
 import { ScrollReveal } from '@/shared/components/ui';
 
-import { SOPT_ACTION_ITEMS, SOPT_DESCRIPTION, SOPT_RESULT_ITEMS } from '../mocks/soptProject';
+import { imgPlanningSoptAction1, imgPlanningSoptAction2 } from '../assets';
+import { SOPT_DESCRIPTION } from '../mocks/soptProject';
 
 export const ProjectSopt = () => {
   return (
@@ -23,32 +24,22 @@ export const ProjectSopt = () => {
         />
       </ScrollReveal>
 
-      <ScrollReveal className='flex w-full flex-col items-start gap-[3.2rem]'>
-        <h3 className='display-sb-32 text-black-10'>Action</h3>
-        <div className='flex w-full flex-col gap-[2.4rem]'>
-          {SOPT_ACTION_ITEMS.map((item) => (
-            <div
-              key={item}
-              className='bg-black-1 flex h-[72rem] w-full items-center justify-center rounded-[1.6rem]'
-            >
-              <p className='title-20-md text-black-9'>{item}</p>
-            </div>
-          ))}
-        </div>
+      <ScrollReveal className='flex w-full flex-col items-start gap-[4rem]'>
+        <h3 className='display-sb-32 text-black-10'>Action - 홍보 콘텐츠 기획 및 제작</h3>
+        <Image
+          src={imgPlanningSoptAction1}
+          alt='SOPT 홍보 콘텐츠'
+          className='w-full rounded-[0.8rem]'
+        />
       </ScrollReveal>
 
-      <ScrollReveal className='flex w-full flex-col items-start gap-[3.2rem]'>
-        <h3 className='display-sb-32 text-black-10'>Result</h3>
-        <div className='flex w-full flex-col gap-[2.4rem]'>
-          {SOPT_RESULT_ITEMS.map((item) => (
-            <div
-              key={item}
-              className='bg-black-1 flex h-[72rem] w-full items-center justify-center rounded-[1.6rem]'
-            >
-              <p className='title-20-md text-black-9'>{item}</p>
-            </div>
-          ))}
-        </div>
+      <ScrollReveal className='flex w-full flex-col items-start gap-[4rem]'>
+        <h3 className='display-sb-32 text-black-10'>Action - Meta 광고</h3>
+        <Image
+          src={imgPlanningSoptAction2}
+          alt='SOPT 홍보 콘텐츠'
+          className='w-full rounded-[0.8rem]'
+        />
       </ScrollReveal>
     </>
   );
