@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { IconGithub, IconLinkedin, IconMail, IconPhoneWhite } from '@/shared/assets';
+import { IconGithub, IconLinkedin } from '@/shared/assets';
 import { MainTextLayout } from '@/shared/components/layout';
 import { CtaButton, IconButton, ScrollReveal, SectionTitle } from '@/shared/components/ui';
 
@@ -26,7 +26,8 @@ export default function Home() {
               포트폴리오 입니다.
             </h1>
             <div className='flex items-center gap-[3.6rem]'>
-              <IconButton
+              {/* @TODO 추후 필요시 주석 삭제 */}
+              {/* <IconButton
                 href='tel:010-7137-2307'
                 icon={IconPhoneWhite}
                 ariaLabel='전화'
@@ -42,7 +43,7 @@ export default function Home() {
                 width={6}
                 height={6}
                 iconSize={6}
-              />
+              /> */}
               <IconButton
                 href='https://github.com/seunghye-rain'
                 icon={IconGithub}

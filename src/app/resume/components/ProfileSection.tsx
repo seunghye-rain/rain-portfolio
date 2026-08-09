@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { IconGithub, IconLinkedin, IconMail, IconPhoneWhite } from '@/shared/assets';
+import { IconGithub, IconLinkedin } from '@/shared/assets';
 import { FeatureTextLayout } from '@/shared/components/layout';
 import { IconButton } from '@/shared/components/ui';
 
@@ -35,23 +35,24 @@ export const ProfileSection = () => {
         </h1>
 
         <div className='flex items-center gap-[3.6rem]'>
-          <IconButton
-            href='tel:010-7137-2307'
-            icon={IconPhoneWhite}
-            ariaLabel='전화'
-            width={4.8}
-            height={4.8}
-            iconSize={4}
-            className='bg-yellow-6'
-          />
-          <IconButton
-            href='mailto:seunghye0307@naver.com'
-            icon={IconMail}
-            ariaLabel='이메일'
-            width={6}
-            height={6}
-            iconSize={6}
-          />
+          {/* @TODO 추후 필요시 주석 삭제 */}
+          {/* <IconButton
+                href='tel:010-7137-2307'
+                icon={IconPhoneWhite}
+                ariaLabel='전화'
+                width={4.8}
+                height={4.8}
+                iconSize={4}
+                className='bg-yellow-6'
+              />
+              <IconButton
+                href='mailto:seunghye0307@naver.com'
+                icon={IconMail}
+                ariaLabel='이메일'
+                width={6}
+                height={6}
+                iconSize={6}
+              /> */}
           <IconButton
             href='https://github.com/seunghye-rain'
             icon={IconGithub}
