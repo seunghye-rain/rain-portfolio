@@ -6,7 +6,7 @@ import { SKILL_CATEGORIES } from '../mocks/skills';
 
 const SkillCategoryBox = ({ title, items }: SkillCategory) => {
   return (
-    <div className='border-yellow-1 bg-yellow-5/60 flex w-[41.3rem] flex-col items-center gap-[3.2rem] rounded-[1.6rem] border-[0.15rem] px-[2rem] py-[3.35rem]'>
+    <div className='border-yellow-1 bg-yellow-5/60 flex w-[41.3rem] flex-col items-center gap-[3.2rem] rounded-[1.6rem] border-[0.15rem] px-[2rem] py-[3.35rem] max-lg:w-full'>
       <p className='title-30-eb text-black-9'>{title}</p>
       <div className='flex flex-1 items-center'>
         <div
@@ -33,7 +33,7 @@ export const SkillSection = () => {
   return (
     <div className='flex flex-col items-center gap-[4rem]'>
       <SectionTitle id='resume-skill-title' title='SKILL' />
-      <div className='flex gap-[2.1rem]'>
+      <div className='flex gap-[2.1rem] max-lg:w-full max-lg:flex-col max-lg:items-center'>
         {SKILL_CATEGORIES.map((category) => (
           <SkillCategoryBox key={category.title} {...category} />
         ))}

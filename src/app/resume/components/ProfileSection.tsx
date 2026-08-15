@@ -8,9 +8,9 @@ import { EDUCATIONS } from '../mocks/education';
 
 export const ProfileSection = () => {
   return (
-    <div className='flex items-center gap-[12rem]'>
+    <div className='flex items-center gap-[12rem] max-lg:flex-col max-lg:gap-[3rem]'>
       <div
-        className='size-[35rem] shrink-0 overflow-hidden rounded-full'
+        className='size-[35rem] shrink-0 overflow-hidden rounded-full max-lg:size-[18rem]'
         style={{
           backgroundImage:
             'linear-gradient(136deg, rgb(221, 224, 230) 3.3%, rgb(213, 220, 233) 95.9%)',
@@ -27,7 +27,10 @@ export const ProfileSection = () => {
       </div>
 
       <div className='animate-fade-in flex flex-col items-start gap-[2.4rem]'>
-        <h1 id='resume-profile-title' className='flex items-center gap-[0.8rem]'>
+        <h1
+          id='resume-profile-title'
+          className='flex items-center gap-[0.8rem] max-lg:flex-wrap max-lg:justify-center'
+        >
           <span className='display-sb-36 text-black-10'>양승혜</span>
           <span className='display-sb-36 text-black-10'>|</span>
           <span className='title-32-md text-black-8'>Yang Seunghye</span>

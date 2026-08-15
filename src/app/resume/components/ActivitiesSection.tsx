@@ -8,7 +8,7 @@ export const ActivitiesSection = () => {
       <SectionTitle id='resume-activities-title' title='ACTIVITIES' />
       <div className='flex w-full max-w-[110rem] flex-col items-center gap-[1.6rem]'>
         {ACTIVITIES.map((activity) => (
-          <div key={activity.title} className='flex justify-center'>
+          <div key={activity.title} className='flex justify-center max-lg:w-full'>
             <Accordion
               key={activity.title}
               title={activity.title}
