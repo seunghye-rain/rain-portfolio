@@ -2,8 +2,8 @@
 
 export const Footer = () => {
   return (
-    <footer className='border-black-4 bg-black-2 flex w-full items-center justify-between border-t px-[8rem] py-[3rem]'>
-      <div className='px-[3.6rem] py-[1.8rem]'>
+    <footer className='border-black-4 bg-black-2 flex w-full flex-col items-start gap-[2rem] border-t px-[2rem] py-[3rem] lg:flex-row lg:items-center lg:justify-between lg:px-[8rem]'>
+      <div className='px-0 py-[1.8rem] lg:px-[3.6rem]'>
         <p className='font-16-rg text-black-6'>Copyright © 2026 양승혜</p>
       </div>
       {/* @TODO 추후 필요시 주석 삭제 */}
