@@ -35,7 +35,7 @@ export const ProjectCard = ({
       href={href}
       target={target}
       rel={rel}
-      className='border-black-4 bg-black-1 flex w-[30rem] flex-col items-start gap-[1rem] rounded-[1.6rem] border pb-[1.2rem] shadow-[0_0.4rem_1.2rem_0_rgba(0,0,0,0.06)] transition-transform duration-200 ease-out hover:-translate-y-[0.4rem] hover:scale-[1.02]'
+      className='border-black-4 bg-black-1 flex w-[30rem] flex-col items-start gap-[1rem] rounded-[1.6rem] border pb-[1.2rem] shadow-[0_0.4rem_1.2rem_0_rgba(0,0,0,0.06)] transition-transform duration-200 ease-out hover:-translate-y-[0.4rem] hover:scale-[1.02] max-lg:w-full'
     >
       <div
         className={cn(
