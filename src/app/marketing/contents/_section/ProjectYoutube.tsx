@@ -14,35 +14,36 @@ import {
 export const ProjectYoutube = () => {
   return (
     <>
-      <ScrollReveal className='flex w-full items-start gap-[3.5rem]'>
+      <ScrollReveal className='flex w-full items-start gap-[3.5rem] max-lg:flex-col max-lg:items-center max-lg:gap-[2rem]'>
         <Image
           src='/imgs/project-sopt/img-bbangddoa-logo.png'
           alt='빵또아'
           width={300}
           height={300}
-          className='size-[30rem] shrink-0 object-contain'
+          className='size-[30rem] shrink-0 object-contain max-lg:size-[12rem]'
         />
         <MainTextLayout
           title={YOUTUBE_DESCRIPTION.title}
           period={YOUTUBE_DESCRIPTION.period}
           content={YOUTUBE_DESCRIPTION.paragraphs}
+          className='max-lg:w-full'
         />
       </ScrollReveal>
 
-      <div className='flex w-full items-start justify-center gap-[8rem]'>
-        <ScrollReveal direction='fade' className='sticky top-[24.4rem] shrink-0'>
+      <div className='flex w-full items-start justify-center gap-[8rem] max-lg:flex-col max-lg:items-center max-lg:gap-[3rem]'>
+        <ScrollReveal direction='fade' className='lg:sticky lg:top-[24.4rem] lg:shrink-0'>
           <Image
             src='/imgs/project-sopt/img-bbangddoa-phone.png'
             alt='빵또아 유튜브 채널 화면'
             width={341}
             height={700}
-            className='h-[70rem] w-[34.1rem] object-contain'
+            className='h-[70rem] w-[34.1rem] object-contain max-lg:h-[35rem] max-lg:w-[17rem]'
           />
         </ScrollReveal>
 
         <ScrollReveal
           direction='right'
-          className='flex w-[78.3rem] flex-col items-start gap-[2.5rem]'
+          className='flex w-[78.3rem] flex-col items-start gap-[2.5rem] max-lg:w-full'
         >
           <MainTextLayout title={YOUTUBE_OBJECT.title} content={YOUTUBE_OBJECT.paragraphs} />
 
@@ -66,7 +67,7 @@ export const ProjectYoutube = () => {
         </ScrollReveal>
       </div>
 
-      <ScrollReveal className='flex gap-[8.6rem]'>
+      <ScrollReveal className='flex gap-[8.6rem] max-lg:w-full max-lg:flex-col max-lg:items-center max-lg:gap-[2rem]'>
         {YOUTUBE_STAT_BOXES.map((stat) => (
           <ContentWriteBox
             key={stat.title}

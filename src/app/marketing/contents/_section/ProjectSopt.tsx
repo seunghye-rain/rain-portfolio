@@ -20,35 +20,36 @@ import {
 export const ProjectSopt = () => {
   return (
     <>
-      <ScrollReveal className='flex w-full items-start gap-[3.5rem]'>
+      <ScrollReveal className='flex w-full items-start gap-[3.5rem] max-lg:flex-col max-lg:items-center max-lg:gap-[2rem]'>
         <Image
           src='/imgs/project-sopt/img-sopt-logo.png'
           alt='SOPT'
           width={300}
           height={300}
-          className='size-[30rem] shrink-0 object-contain'
+          className='size-[30rem] shrink-0 object-contain max-lg:size-[12rem]'
         />
         <MainTextLayout
           title='국내 최대 규모 IT벤처 창업 동아리 SOPT 미디어팀 운영'
           period={SOPT_DESCRIPTION.period}
           content={SOPT_DESCRIPTION.paragraphs}
+          className='max-lg:w-full'
         />
       </ScrollReveal>
 
-      <div className='flex w-full items-start justify-center gap-[8rem]'>
-        <ScrollReveal direction='fade' className='sticky top-[24.4rem] shrink-0'>
+      <div className='flex w-full items-start justify-center gap-[8rem] max-lg:flex-col max-lg:items-center max-lg:gap-[3rem]'>
+        <ScrollReveal direction='fade' className='lg:sticky lg:top-[24.4rem] lg:shrink-0'>
           <Image
             src='/imgs/project-sopt/img-sopt-media-phone.png'
             alt='SOPT 미디어팀 인스타그램 화면'
             width={341}
             height={700}
-            className='h-[70rem] w-[34.1rem] object-contain'
+            className='h-[70rem] w-[34.1rem] object-contain max-lg:h-[35rem] max-lg:w-[17rem]'
           />
         </ScrollReveal>
 
         <ScrollReveal
           direction='right'
-          className='flex w-[78.3rem] flex-col items-start gap-[2.5rem]'
+          className='flex w-[78.3rem] flex-col items-start gap-[2.5rem] max-lg:w-full'
         >
           <MainTextLayout title={SOPT_OBJECT.title} content={SOPT_OBJECT.paragraphs} />
 
@@ -72,7 +73,7 @@ export const ProjectSopt = () => {
         </ScrollReveal>
       </div>
 
-      <ScrollReveal className='flex gap-[8.6rem]'>
+      <ScrollReveal className='flex gap-[8.6rem] max-lg:w-full max-lg:flex-col max-lg:items-center max-lg:gap-[2rem]'>
         {SOPT_STAT_BOXES.map((stat) => (
           <ContentWriteBox
             key={stat.title}
@@ -84,7 +85,7 @@ export const ProjectSopt = () => {
       </ScrollReveal>
 
       <ScrollReveal className='flex w-full flex-col items-start'>
-        <div className='flex flex-col gap-[4rem]'>
+        <div className='flex flex-col gap-[4rem] max-lg:w-full'>
           <h3 className='display-sb-32 text-black-10'>대표 콘텐츠 - SOPTLIST</h3>
           <div className='flex w-full flex-col gap-[2.4rem]'>
             <Image
@@ -102,7 +103,7 @@ export const ProjectSopt = () => {
       </ScrollReveal>
 
       <ScrollReveal className='flex w-full flex-col items-start'>
-        <div className='flex flex-col gap-[4rem]'>
+        <div className='flex flex-col gap-[4rem] max-lg:w-full'>
           <h3 className='display-sb-32 text-black-10'>대표 콘텐츠 - 파트장 영통 팬사인회</h3>
           <div className='flex w-full flex-col gap-[2.4rem]'>
             <Image src={imgContentsSoptPart1} alt='SOPTLIST' className='w-full rounded-[0.8rem]' />

@@ -22,9 +22,9 @@ export default async function MarketingContentsPage({ searchParams }: MarketingC
   const ActiveSection = SECTION_BY_TAB[activeTab];
 
   return (
-    <div className='flex flex-col items-center gap-[10rem]'>
-      <section aria-labelledby='marketing-contents-project-title'>
-        <div className='flex flex-col items-center gap-[10rem]'>
+    <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
+      <section aria-labelledby='marketing-contents-project-title' className='max-lg:w-full'>
+        <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
           <p className='font-23-rg text-black-8 text-center tracking-[0.2rem]'>
             사용자가 무엇에 반응하는지 관찰하고,
             <br />
