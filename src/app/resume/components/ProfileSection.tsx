@@ -26,7 +26,7 @@ export const ProfileSection = () => {
         />
       </div>
 
-      <div className='animate-fade-in flex flex-col items-start gap-[2.4rem]'>
+      <div className='animate-fade-in flex flex-col items-start gap-[2.4rem] max-lg:w-full max-lg:items-center'>
         <h1
           id='resume-profile-title'
           className='flex items-center gap-[0.8rem] max-lg:flex-wrap max-lg:justify-center'
