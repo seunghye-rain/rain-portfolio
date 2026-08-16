@@ -30,7 +30,7 @@ export const ProjectYoutube = () => {
         />
       </ScrollReveal>
 
-      <div className='flex w-full items-start justify-center gap-[8rem] max-lg:flex-col max-lg:items-center max-lg:gap-[3rem]'>
+      <div className='flex w-full items-start justify-center gap-[8rem] overflow-x-hidden max-lg:flex-col max-lg:items-center max-lg:gap-[3rem]'>
         <ScrollReveal direction='fade' className='lg:sticky lg:top-[24.4rem] lg:shrink-0'>
           <Image
             src='/imgs/project-sopt/img-bbangddoa-phone.png'
