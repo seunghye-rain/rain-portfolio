@@ -8,15 +8,15 @@ import { ADVANTAGES } from './constants/advantages';
 
 export default function Home() {
   return (
-    <div className='flex flex-col items-center gap-[10rem]'>
-      <section aria-labelledby='home-hero-title'>
-        <div className='flex flex-col items-center gap-[10rem]'>
+    <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
+      <section aria-labelledby='home-hero-title' className='w-full'>
+        <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
           <Image
             src='/imgs/home-logo.png'
             alt='Portfolio'
             width={1230}
             height={374}
-            className='animate-fade-in h-auto w-[123rem]'
+            className='animate-fade-in h-auto w-[123rem] max-lg:w-full'
             priority
           />
 
@@ -78,14 +78,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-labelledby='home-advantages-title'>
+      <section aria-labelledby='home-advantages-title' className='w-full'>
         <ScrollReveal className='flex flex-col items-center gap-[4rem]'>
           <SectionTitle id='home-advantages-title' title='Advantages' showIcon={false} />
-          <div className='grid grid-cols-2 gap-x-[8rem] gap-y-[4rem]'>
+          <div className='grid grid-cols-2 gap-x-[8rem] gap-y-[4rem] max-lg:grid-cols-1 max-lg:gap-x-0 max-lg:gap-y-[4rem]'>
             {ADVANTAGES.map((advantage) => (
               <MainTextLayout
                 key={advantage.title}
-                className='w-[50rem]'
+                className='w-[50rem] max-lg:w-full'
                 title={advantage.title}
                 content={advantage.paragraphs}
                 boldPhrases={advantage.boldPhrases}

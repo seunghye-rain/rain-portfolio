@@ -19,8 +19,8 @@ export default async function DevelopPage({ searchParams }: DevelopPageProps) {
     : PROJECTS;
 
   return (
-    <div className='flex flex-col items-center gap-[10rem]'>
-      <section aria-labelledby='develop-hero-title'>
+    <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
+      <section aria-labelledby='develop-hero-title' className='w-full'>
         <div className='animate-fade-in flex flex-col items-center gap-[4rem]'>
           <h1 id='develop-hero-title' className='display-sb-50 text-black-10 text-center'>
             안녕하세요,
@@ -56,7 +56,10 @@ export default async function DevelopPage({ searchParams }: DevelopPageProps) {
       <section aria-labelledby='develop-project-title' className='w-full'>
         <div className='flex w-full flex-col items-center gap-[4rem]'>
           <ProjectFilterTabs activePlatform={activePlatform} />
-          <div key={activePlatform} className='animate-rise-up grid grid-cols-3 gap-[5.6rem]'>
+          <div
+            key={activePlatform}
+            className='animate-rise-up grid grid-cols-3 gap-[5.6rem] max-lg:grid-cols-1 max-lg:gap-[3rem]'
+          >
             {filteredProjects.map((project) => (
               <ProjectCard
                 key={project.title}

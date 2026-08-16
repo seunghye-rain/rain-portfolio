@@ -33,9 +33,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='ko' className={pretendard.className}>
-      <body className='pt-[9.8rem]'>
+      <body className='pt-[6.4rem] lg:pt-[9.8rem]'>
         <Header />
-        <main className='px-[8rem] py-[8rem]'>{children}</main>
+        <main className='px-[2rem] py-[4rem] lg:px-[8rem] lg:py-[8rem]'>{children}</main>
         <Footer />
       </body>
     </html>

@@ -12,11 +12,14 @@ const CARD_SECTIONS: { title: string; imageRatio: ImageRatio; projects: MoreProj
 
 export const ProjectMore = () => {
   return (
-    <div className='flex w-full flex-col items-start gap-[4rem]'>
+    <div className='flex w-full flex-col items-start gap-[4rem] max-lg:gap-[2rem]'>
       {CARD_SECTIONS.map((section, index) => (
-        <ScrollReveal key={section.title} className='flex w-full flex-col items-start gap-[4rem]'>
+        <ScrollReveal
+          key={section.title}
+          className='flex w-full flex-col items-start gap-[4rem] max-lg:gap-[2rem]'
+        >
           <h3 className='display-sb-32 text-black-10'>{section.title}</h3>
-          <div className='grid grid-cols-4 gap-x-[2.6rem] gap-y-[5.6rem]'>
+          <div className='grid grid-cols-4 gap-x-[2.6rem] gap-y-[5.6rem] max-lg:w-full max-lg:grid-cols-1 max-lg:gap-y-[3rem] lg:self-center'>
             {section.projects.map((project) => (
               <ProjectCard
                 key={project.href}
