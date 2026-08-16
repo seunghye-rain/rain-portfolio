@@ -9,18 +9,19 @@ import { GDGOC_DESCRIPTION } from '../mocks/gdgocProject';
 export const ProjectGdgoc = () => {
   return (
     <>
-      <ScrollReveal className='flex w-full items-start gap-[4rem]'>
+      <ScrollReveal className='flex w-full items-start gap-[4rem] max-lg:flex-col max-lg:items-center max-lg:gap-[2rem]'>
         <Image
           src='/imgs/project-sopt/img-gdgoc-logo.png'
           alt='GDGoC Ewha'
           width={300}
           height={300}
-          className='size-[30rem] shrink-0 object-contain'
+          className='size-[30rem] shrink-0 object-contain max-lg:size-[12rem]'
         />
         <MainTextLayout
           title={GDGOC_DESCRIPTION.title}
           period={GDGOC_DESCRIPTION.period}
           content={GDGOC_DESCRIPTION.paragraphs}
+          className='max-lg:w-full'
         />
       </ScrollReveal>
 

@@ -19,7 +19,7 @@ export const ProjectTabs = ({ activeTab }: ProjectTabsProps) => {
   return (
     <div
       ref={ref}
-      className='bg-black-1 sticky top-[9.8rem] z-40 -mx-[8rem] flex w-[calc(100%+16rem)] flex-col items-center px-[8rem]'
+      className='bg-black-1 sticky top-[6.4rem] z-40 -mx-[2rem] flex w-[calc(100%+4rem)] flex-col items-center px-[2rem] lg:top-[9.8rem] lg:-mx-[8rem] lg:w-[calc(100%+16rem)] lg:px-[8rem]'
     >
       <SectionTitle id='marketing-planning-project-title' title='Project' icon={IconSmartphone} />
       <Tabs>
