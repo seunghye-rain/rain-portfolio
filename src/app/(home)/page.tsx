@@ -9,7 +9,7 @@ import { ADVANTAGES } from './constants/advantages';
 export default function Home() {
   return (
     <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
-      <section aria-labelledby='home-hero-title'>
+      <section aria-labelledby='home-hero-title' className='w-full'>
         <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
           <Image
             src='/imgs/home-logo.png'
@@ -78,7 +78,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section aria-labelledby='home-advantages-title'>
+      <section aria-labelledby='home-advantages-title' className='w-full'>
         <ScrollReveal className='flex flex-col items-center gap-[4rem]'>
           <SectionTitle id='home-advantages-title' title='Advantages' showIcon={false} />
           <div className='grid grid-cols-2 gap-x-[8rem] gap-y-[4rem] max-lg:grid-cols-1 max-lg:gap-x-0 max-lg:gap-y-[4rem]'>

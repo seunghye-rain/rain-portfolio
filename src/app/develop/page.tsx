@@ -20,7 +20,7 @@ export default async function DevelopPage({ searchParams }: DevelopPageProps) {
 
   return (
     <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
-      <section aria-labelledby='develop-hero-title' className='max-lg:w-full'>
+      <section aria-labelledby='develop-hero-title' className='w-full'>
         <div className='animate-fade-in flex flex-col items-center gap-[4rem]'>
           <h1 id='develop-hero-title' className='display-sb-50 text-black-10 text-center'>
             안녕하세요,

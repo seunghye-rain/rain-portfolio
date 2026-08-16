@@ -6,9 +6,9 @@ import { CONTENT_BOXES } from './mocks/contentBoxes';
 export default function MarketingPage() {
   return (
     <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
-      <section aria-labelledby='marketing-hero-title' className='max-lg:w-full'>
+      <section aria-labelledby='marketing-hero-title' className='w-full'>
         <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
-          <div className='animate-fade-in flex flex-col items-center gap-[4rem]'>
+          <div className='animate-fade-in flex flex-col items-center gap-[4rem] max-lg:w-full'>
             <h1 id='marketing-hero-title' className='display-sb-50 text-black-10 text-center'>
               안녕하세요,
               <br />

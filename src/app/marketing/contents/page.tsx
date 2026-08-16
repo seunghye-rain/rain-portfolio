@@ -23,9 +23,9 @@ export default async function MarketingContentsPage({ searchParams }: MarketingC
 
   return (
     <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
-      <section aria-labelledby='marketing-contents-project-title' className='max-lg:w-full'>
+      <section aria-labelledby='marketing-contents-project-title' className='w-full'>
         <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
-          <p className='font-23-rg text-black-8 text-center tracking-[0.2rem]'>
+          <p className='font-23-rg text-black-8 text-center tracking-[0.2rem] max-lg:w-full'>
             사용자가 무엇에 반응하는지 관찰하고,
             <br />
             그 답을 콘텐츠와 카피로 만들어 직접 세상에 내놓습니다.
