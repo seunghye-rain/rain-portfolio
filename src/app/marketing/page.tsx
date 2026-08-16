@@ -5,10 +5,10 @@ import { CONTENT_BOXES } from './mocks/contentBoxes';
 
 export default function MarketingPage() {
   return (
-    <div className='flex flex-col items-center gap-[10rem]'>
-      <section aria-labelledby='marketing-hero-title'>
-        <div className='flex flex-col items-center gap-[10rem]'>
-          <div className='animate-fade-in flex flex-col items-center gap-[4rem]'>
+    <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
+      <section aria-labelledby='marketing-hero-title' className='w-full'>
+        <div className='flex flex-col items-center gap-[10rem] max-lg:gap-[5rem]'>
+          <div className='animate-fade-in flex flex-col items-center gap-[4rem] max-lg:w-full'>
             <h1 id='marketing-hero-title' className='display-sb-50 text-black-10 text-center'>
               안녕하세요,
               <br />
@@ -30,7 +30,7 @@ export default function MarketingPage() {
             </p>
           </div>
 
-          <ScrollReveal className='flex gap-[10rem]'>
+          <ScrollReveal className='flex gap-[10rem] max-lg:w-full max-lg:flex-col max-lg:items-center max-lg:gap-[3rem]'>
             {CONTENT_BOXES.map((box) => (
               <HoverableContentBox
                 key={box.href}

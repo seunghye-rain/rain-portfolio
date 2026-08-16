@@ -17,12 +17,12 @@ export const Accordion = ({ title, period, details, defaultOpen = false }: Accor
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className='bg-black-1 inline-flex flex-col self-start rounded-[2rem] px-[2.4rem] py-[1.4rem]'>
+    <div className='bg-black-1 inline-flex flex-col self-start rounded-[2rem] px-[2.4rem] py-[1.4rem] max-lg:w-full'>
       <button
         type='button'
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
-        className='flex items-center justify-between gap-[1.6rem]'
+        className='flex w-full items-center justify-between gap-[1.6rem] text-left whitespace-normal'
       >
         <FeatureTextLayout title={title} subtitle={period} />
         <span className='relative flex size-[4rem] shrink-0 items-center justify-center overflow-hidden rounded-full'>
