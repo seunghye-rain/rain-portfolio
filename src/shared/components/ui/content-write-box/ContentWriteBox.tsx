@@ -10,12 +10,12 @@ type ContentWriteBoxProps = {
 const escapeRegularExpression = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 const CONTAINER_CLASS_NAME = {
-  default: 'rounded-[1.6rem] px-[5rem] py-[4rem]',
-  stat: 'w-[50rem] rounded-[3rem] px-[4rem] py-[3.5rem]',
+  default: 'rounded-[1.6rem] px-[5rem] py-[4rem] max-lg:w-full max-lg:px-[3rem]',
+  stat: 'w-[50rem] rounded-[3rem] px-[4rem] py-[3.5rem] max-lg:w-full',
 };
 
 const DESCRIPTION_CLASS_NAME = {
-  default: 'title-20-rg text-black-9 flex w-[40rem] flex-col gap-[1.2rem]',
+  default: 'title-20-rg text-black-9 flex w-[40rem] flex-col gap-[1.2rem] max-lg:w-full',
   stat: 'title-20-md text-black-9 flex flex-col items-center gap-[0.4rem] text-center',
 };
 
